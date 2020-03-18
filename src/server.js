@@ -6,13 +6,15 @@ const express = require('express')
 const app = express()
 const port = 7070
 
+const designShirt = require('./routes/design-shirt.js')
+const home = require('./routes/home.js')
 // const overview = require('./routes/overview.js')
 
 // const bodyParser = require('body-parser')
 const path = require("path")
 
 // const partials = require('express-partials');
-app.get('/', (req, res) => res.send('Hello World!'))
+// app.get('/', (req, res) => res.send('Hello World!'))
 app
     
     // .use(bodyParser.urlencoded({ extended: true }))
@@ -22,8 +24,8 @@ app
 
     
     .use(express.static(path.join(__dirname, '../build')))
-    // .use('/', offline)
-    // .use('/', overview)
+    .use('/', designShirt)
+    .use('/', home)
     // .use('/', detail)
     // .use('/', search)
 

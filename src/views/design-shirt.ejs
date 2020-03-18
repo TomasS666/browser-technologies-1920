@@ -1,0 +1,41 @@
+<%- include("components/head.ejs") %>
+
+<body>
+    <%- include('components/header.ejs') %>
+    <main id="content">
+        <section>
+            test shirt
+            <form action="">
+
+                <fieldset>
+                    <label for="small">Small</label>
+                    <input type="radio" name="size" value="small" id="small" <%= query.size == "small" ? checked="checked" : checked="n" %>>
+                    <br>
+                    <label for="medium">Medium</label>
+                    <input type="radio" name="size" id="medium">
+                    <br>
+                    <label for="large">Large</label>
+                    <input type="radio" name="size" id="large">
+                    <br>
+                    <label for="xl">Extra Large</label>
+
+                    <br>
+                    <label for="small">Extra Extra L</label>
+                    <input type="radio" name="size" id="xxl">
+                    <label for="shirttext">Text</label>
+                    <input type="text" name="shirttext" id="shirttext" value="<%= query.shirttext == "" ? "" : query.shirttext %>">
+                    
+                    <label for="reset">Reset</label>
+                    <input type="reset" value="Reset the form" accesskey="r">
+                    <%= query.shirttext %>
+
+                    <br>
+                    <button>Save and go to step 2</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <%- include('components/footer.ejs') %>
+</body>
+
+</html>
