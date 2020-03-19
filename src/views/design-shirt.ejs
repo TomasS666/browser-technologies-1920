@@ -57,15 +57,17 @@
                     <button>Save and go to step 3</button>
                 </fieldset>
 
-                <fieldset>
+                <fieldset data-step="3">
                     <legend>Step 3: Write your text!</legend>
                     <label for="shirttext">Text</label>
-                        <input type="text" name="shirttext" id="shirttext" value="<%= query.shirttext == "" ? "" : query.shirttext %>">
-
+                    <textarea name="shirtText" id="shirtText" maxlength="80"></textarea>
+                        <!-- <input type="text" name="shirttext" id="shirttext" value="<%= query.shirttext == "" ? "" : query.shirttext %>"> -->
+                    <img src="img/shirt.jpg" alt="">
+                </fieldset>
+                <fieldset>
                     <select name="" id="">
                         <option value="arial">Arial</option>
                         <option value="calibri">Calibri</option>
-              
                         <option value="times-new-roman">Times New Roman</option>
                     </select>
                 </fieldset>

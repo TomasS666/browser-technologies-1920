@@ -24,7 +24,7 @@ app
     .set('views', path.join(__dirname,'views'))
 
     
-    .use(express.static(path.join(__dirname, '../build')))
+    .use(express.static(path.join(__dirname, '../static')))
     .use('/', designShirt)
     .use('/', home)
     .use('/', save)

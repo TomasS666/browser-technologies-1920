@@ -1,0 +1,22 @@
+
+fieldset[data-step="3"]{
+    position: relative;
+    text-align: center;
+}
+
+/* fieldset[data-step="3"] textarea{
+    resize: none;
+} */
+
+fieldset[data-step="3"] img{
+    max-width: 100%;
+}
+
+textarea{
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    background-color: transparent;
+    color: #fff;
+}
