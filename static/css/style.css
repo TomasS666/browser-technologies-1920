@@ -8,6 +8,12 @@ fieldset[data-step="3"]{
     resize: none;
 } */
 
+
+table,
+td, th {
+    border: 1px solid #333;
+}
+
 fieldset[data-step="3"] img{
     max-width: 100%;
 }

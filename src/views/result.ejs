@@ -1,0 +1,34 @@
+<%- include("components/head.ejs") %>
+
+<body>
+    <%- include('components/header.ejs') %>
+    <main id="content">
+        <section>
+            This is your shirt : 
+            <table>
+                <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <% for (const [key, value] of Object.entries(query)) {%>
+                    <tr>
+                        <td><%= key %></td> 
+                        <td><%= value %></td>
+                    </tr>
+                <% } %> 
+                </tbody>
+            </table>
+            
+            <!-- <form action="">
+             
+                <button type="submit" formaction="/save">Save</button>
+                <button>Go on</button>
+
+            </form> -->
+        </section>
+    </main>
+    <%- include('components/footer.ejs') %>
+</body>
+
+</html>

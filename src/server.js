@@ -8,6 +8,7 @@ const port = 7070
 
 const designShirt = require('./routes/design-shirt.js')
 const home = require('./routes/home.js')
+const result = require('./routes/result.js')
 // const overview = require('./routes/overview.js')
 
 // const bodyParser = require('body-parser')
@@ -28,6 +29,7 @@ app
     .use('/', designShirt)
     .use('/', home)
     .use('/', save)
+    .use('/', result)
     // .use('/', detail)
     // .use('/', search)
 

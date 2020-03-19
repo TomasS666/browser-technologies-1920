@@ -5,7 +5,7 @@
     <main id="content">
         <section>
             test shirt
-            <form action="">
+            <form action="/result">
 
                 <fieldset>
                     <legend>Step 1: Pick a size</legend>
@@ -38,7 +38,7 @@
                    
                     
                     <button type="submit" formaction="/save">Save</button>
-                    <button type="submit" formaction="#black">Go on</button>
+                    <button type="submit" formaction="#black">Go on to step 2</button>
                 </fieldset>
 
                 <fieldset>
@@ -54,7 +54,8 @@
 
                     <br>
                     <br>
-                    <button>Save and go to step 3</button>
+                    <button type="submit" formaction="/save">Save</button>
+                    <button type="submit" formaction="#black">Go on to step 3</button>
                 </fieldset>
 
                 <fieldset data-step="3">
@@ -65,12 +66,16 @@
                     <img src="img/shirt.jpg" alt="">
                 </fieldset>
                 <fieldset>
-                    <select name="" id="">
+                    <label for="font">Choose a font</label>
+                    <select name="font" id="font">
                         <option value="arial">Arial</option>
                         <option value="calibri">Calibri</option>
                         <option value="times-new-roman">Times New Roman</option>
                     </select>
                 </fieldset>
+                <button type="submit" formaction="/save">Save</button>
+                <button>Go on</button>
+
             </form>
         </section>
     </main>
