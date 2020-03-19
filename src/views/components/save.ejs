@@ -1,0 +1,17 @@
+<%- include('head.ejs') %>
+<%- include('header.ejs') %>
+
+
+<% if(typeof url != 'undefined'){ %>
+    Save this link: <a href="<%= baseurl + "/design-shirt/" + url %>">Your shirt!</a>
+<% }else{ %>
+    Sorry, something went wrong
+<% } %>
+
+<a href="<%= url %>">
+
+    Or go on with your shirt now
+
+</a>
+
+<%- include('footer.ejs') %>

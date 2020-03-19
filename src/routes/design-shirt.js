@@ -4,17 +4,25 @@ const path = require('path')
 
 
 router.get('/design-shirt', (req, res) => {
-    // let data = []
-    console.log(req.query.size)
+    
+    console.log(req.query)
 
-        res.render('design-shirt.ejs', {query: req.query })
+    console.log(req.protocol + '://' + req.get('host') + req.originalUrl)
+        res.render('design-shirt.ejs', {
+            query: req.query,
+            url: req.protocol + '://' + req.get('host') + req.originalUrl
+        })
 
 })
    
 
-router.get('/design-shirt/step-:1', (req, res) => {
-    res.render('design-shirt.ejs')
-})
-
+// router.get('/design-shirt/step-:step', (req, res) => {
+    
+//     res.render('design-shirt.ejs', {
+//         query: req.query,
+//         step: req.params.step ? req.params.step : "1",
+//         url: eq.protocol + '://' + req.get('host') + req.originalUrl
+//     })
+// })
 
 module.exports = router;

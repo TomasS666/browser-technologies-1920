@@ -8,29 +8,66 @@
             <form action="">
 
                 <fieldset>
+                    <legend>Step 1: Pick a size</legend>
                     <label for="small">Small</label>
-                    <input type="radio" name="size" value="small" id="small" <%= query.size == "small" ? checked="checked" : checked="n" %>>
+                        <input required id="small" type="radio" name="size" value="small"  <%= query.size == "small" ? checked="checked" : checked="n" %>>
                     <br>
                     <label for="medium">Medium</label>
-                    <input type="radio" name="size" id="medium">
+                        <input id="medium" type="radio" name="size" value="medium" <%= query.size == "medium" ? checked="checked" : checked="n" %>>  
                     <br>
-                    <label for="large">Large</label>
-                    <input type="radio" name="size" id="large">
+                    <label for="large">Large </label>
+                        <input id="large" type="radio" name="size" value="large" <%= query.size == "large" ? checked="checked" : checked="n" %>>    
                     <br>
-                    <label for="xl">Extra Large</label>
-
+                    <label for="xl">Extra Large </label>
+                        <input id="xl" type="radio" name="size" value="xl" <%= query.size == "xl" ? checked="checked" : checked="n" %>>
+                   
                     <br>
-                    <label for="small">Extra Extra L</label>
-                    <input type="radio" name="size" id="xxl">
-                    <label for="shirttext">Text</label>
-                    <input type="text" name="shirttext" id="shirttext" value="<%= query.shirttext == "" ? "" : query.shirttext %>">
+                    <label for="xxl">Extra Extra Large</label>
+                        <input id="xxl" type="radio" name="size" value="xxl" <%= query.size == "xxl" ? checked="checked" : checked="n" %>>
                     
+                    <br><br>
+
+                    <br><br>
                     <label for="reset">Reset</label>
-                    <input type="reset" value="Reset the form" accesskey="r">
+                        <input type="reset" value="Reset the form" accesskey="r">
+                    
                     <%= query.shirttext %>
 
                     <br>
-                    <button>Save and go to step 2</button>
+                    <br>
+                   
+                    
+                    <button type="submit" formaction="/save">Save</button>
+                    <button type="submit" formaction="#black">Go on</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Step 2: Pick a color for your t-shirt</legend>
+                    <label for="black">Default: Black</label>
+                        <input checked id="black" type="radio" name="color" value="black"  <%= query.color == "black" ? checked="checked" : checked="n" %>>
+                    
+                    <br>
+                    <label for="white">White </label>
+                        <input id="white" type="radio" name="color" value="white"  <%= query.color == "white" ? checked="checked" : checked="n" %>>
+                   
+                    <%= query.shirttext %>
+
+                    <br>
+                    <br>
+                    <button>Save and go to step 3</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Step 3: Write your text!</legend>
+                    <label for="shirttext">Text</label>
+                        <input type="text" name="shirttext" id="shirttext" value="<%= query.shirttext == "" ? "" : query.shirttext %>">
+
+                    <select name="" id="">
+                        <option value="arial">Arial</option>
+                        <option value="calibri">Calibri</option>
+              
+                        <option value="times-new-roman">Times New Roman</option>
+                    </select>
                 </fieldset>
             </form>
         </section>
