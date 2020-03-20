@@ -27,7 +27,25 @@ or this command if you want to clone the repo into your current folder:
 
 or you can download the zip file or something similar by clicking on the green button on the top-right position of every repo.
 
-## 
+## Core features
+* Design shirt with text
+* Pick a shirt color
+* Pick a shirt size
+* Choose a websafe font
+* Save custom shirt for later
+
+## Wishlist
+* Saving the data of a user in a better way (though I should focus more on the frontend, no priority)
+* Direct text manipulation on the shirt as a delight and addition to the pleasurable layer
+* Live preview of shirt color, text ^, font
+* Print button for convenience ( **gonna add that with feature detection of the JS window.print() method ** )
+
+## Known bugs
+* Missing navigation
+
+## License
+
+[MIT License Copyright (c) 2020 Tomas S](https://github.com/TomasS666/web-app-from-scratch-1920/blob/master/LICENSE)
 
 
 
