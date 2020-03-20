@@ -1,6 +1,7 @@
 # Browser Technologies @cmda-minor-web 1920
 ![project banner](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/BT-shirt-poster.png)
-## Questions for feedback
+
+## Questions for feedback (NL)
 1. Waarom zou je custom properties gebruiken als je voor IE en andere browsers alsnog een fallback eronder moet definiëren?
 Ik vind custom properties geweldig, maar nu ben je alles 2 keer aan het doen terwijl de nieuwe browsers en devices de fallback ook ondersteunen.
 
@@ -14,6 +15,11 @@ background-color: blue;
 
 ## Link naar Wiki
 [https://github.com/TomasS666/browser-technologies-1920/wiki](https://github.com/TomasS666/browser-technologies-1920/wiki)
+
+## Case / Concept
+**_The power of the Web is in its universality. Acces by everyone ~regardless of disability~ is an essential aspect._**
+
+**_- Tim Berners-Lee_**
 
 ## How to install
 To install this project, you only have to clone this repository by entering the following command in your terminal:
