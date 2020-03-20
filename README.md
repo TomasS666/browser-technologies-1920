@@ -41,6 +41,8 @@ or you can download the zip file or something similar by clicking on the green b
 
 ## Known bugs
 * Missing navigation
+* Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
+Gonna remove that.
 
 ## License
 
