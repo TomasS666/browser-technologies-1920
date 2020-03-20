@@ -21,7 +21,7 @@ background-color: blue;
 **_- Tim Berners-Lee_**
 
 ### First wireflow V1
-![wireflow](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/wireflow-part.jpg)
+![wireflow](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/wireflow-part1.jpg)
 
 ## How to install
 To install this project, you only have to clone this repository by entering the following command in your terminal:
