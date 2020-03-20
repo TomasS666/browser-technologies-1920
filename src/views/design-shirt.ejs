@@ -4,7 +4,6 @@
     <%- include('components/header.ejs') %>
     <main id="content">
         <section>
-            test shirt
             <form action="/result">
 
                 <fieldset>
@@ -28,8 +27,8 @@
                     <br><br>
 
                     <br><br>
-                    <label for="reset">Reset</label>
-                        <input type="reset" value="Reset the form" accesskey="r">
+                    <!-- <label for="reset">Reset</label>
+                        <input type="reset" value="Reset the form" accesskey="r"> -->
                     
                     <%= query.shirttext %>
 
@@ -44,12 +43,19 @@
                 <fieldset>
                     <legend>Step 2: Pick a color for your t-shirt</legend>
                     <label for="black">Default: Black</label>
-                        <input checked id="black" type="radio" name="color" value="black"  <%= query.color == "black" ? checked="checked" : checked="n" %>>
+                    <input checked id="black" type="radio" name="color" value="black"  <%= query.color == "black" ? checked="checked" : checked="n" %>>
                     
                     <br>
                     <label for="white">White </label>
-                        <input id="white" type="radio" name="color" value="white"  <%= query.color == "white" ? checked="checked" : checked="n" %>>
-                   
+                    <input id="white" type="radio" name="color" value="white"  <%= query.color == "white" ? checked="checked" : checked="n" %>>
+
+                    <br>
+                    <label for="red">Red </label>
+                    <input id="red" type="radio" name="color" value="red"  <%= query.color == "red" ? checked="checked" : checked="n" %>>
+                    
+                    <br>
+                    <label for="blue">Blue </label>
+                    <input id="blue" type="radio" name="color" value="blue"  <%= query.color == "blue" ? checked="checked" : checked="n" %>>
                     <%= query.shirttext %>
 
                     <br>
@@ -75,7 +81,6 @@
                 </fieldset>
                 <button type="submit" formaction="/save">Save</button>
                 <button>Go on</button>
-
             </form>
         </section>
     </main>

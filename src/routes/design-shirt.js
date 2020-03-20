@@ -9,6 +9,7 @@ router.get('/design-shirt', (req, res) => {
 
     console.log(req.protocol + '://' + req.get('host') + req.originalUrl)
         res.render('design-shirt.ejs', {
+            title: 'Design your shirt',
             query: req.query,
             url: req.protocol + '://' + req.get('host') + req.originalUrl
         })

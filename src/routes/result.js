@@ -35,6 +35,7 @@ router.get('/result', (req, res) => {
 
 
         res.render('result.ejs', {
+            title: 'Design your shirt - Result',
             query: req.query,
             url: req.protocol + '://' + req.get('host') + req.originalUrl
         })
