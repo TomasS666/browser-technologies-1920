@@ -26,3 +26,8 @@ textarea{
     background-color: transparent;
     color: #fff;
 }
+
+img{
+    min-height: 300px;
+    min-width: 300px;
+}

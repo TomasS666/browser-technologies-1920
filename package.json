@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/TomasS666/browser-technologies-1920#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jimp": "^0.9.6"
   }
 }

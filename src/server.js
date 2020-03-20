@@ -1,10 +1,8 @@
-// require('dotenv').config({path:__dirname+'../../.env'})
-
-
+require('dotenv').config({path:__dirname+'../../.env'})
 
 const express = require('express')
 const app = express()
-const port = 7070
+const port = process.env.PORT || 7070
 
 const designShirt = require('./routes/design-shirt.js')
 const home = require('./routes/home.js')
