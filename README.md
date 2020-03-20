@@ -1,6 +1,5 @@
 # Browser Technologies @cmda-minor-web 1920
-<Beschrijving van het project>
-
+![project banner](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/BT-shirt-poster.png)
 ## Questions for feedback
 1. Waarom zou je custom properties gebruiken als je voor IE en andere browsers alsnog een fallback eronder moet definiëren?
 Ik vind custom properties geweldig, maar nu ben je alles 2 keer aan het doen terwijl de nieuwe browsers en devices de fallback ook ondersteunen.
@@ -45,7 +44,7 @@ or you can download the zip file or something similar by clicking on the green b
 
 ## License
 
-[MIT License Copyright (c) 2020 Tomas S](https://github.com/TomasS666/web-app-from-scratch-1920/blob/master/LICENSE)
+[MIT License Copyright (c) 2020 Tomas S](https://github.com/TomasS666/browser-technologies-1920/blob/master/LICENSE)
 
 
 
