@@ -1,13 +1,20 @@
 # Browser Technologies @cmda-minor-web 1920
 <Beschrijving van het project>
 
+## Questions for feedback
+1. Waarom zou je custom properties gebruiken als je voor IE en andere browsers alsnog een fallback eronder moet definiëren?
+Ik vind custom properties geweldig, maar nu ben je alles 2 keer aan het doen terwijl de nieuwe browsers en devices de fallback ook ondersteunen.
+
+Example:
+```css 
+background-color: var(--primary);
+background-color: blue;
+```
+2. 
+3. 
+
 ## Link naar Wiki
 [https://github.com/TomasS666/browser-technologies-1920/wiki](https://github.com/TomasS666/browser-technologies-1920/wiki)
-
-## Questions for feedback
-1. 
-2.
-3. 
 
 ## How to install
 To install this project, you only have to clone this repository by entering the following command in your terminal:
@@ -20,13 +27,7 @@ or this command if you want to clone the repo into your current folder:
 
 or you can download the zip file or something similar by clicking on the green button on the top-right position of every repo.
 
-## Leerdoelen
-- _Wat is Progressive enhancement en hoe kun je dit toepassen._
-- _Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund._
-- _Leren een Browser Technologies onderzoeken, testen en implementeren als enhancement._
-
-- [Lezen: Everyone has JavaScript, right? by Stuart Langridge](https://kryogenix.org/code/browser/everyonehasjs.html)
-- [Lezen: The Web I Want by Chris James](https://dev.to/quii/the-web-i-want-43o)
+## 
 
 
 
