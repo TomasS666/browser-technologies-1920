@@ -6,7 +6,7 @@
         <section>
             <form action="/result">
 
-                <fieldset>
+                <fieldset name="field-1">
                     <legend>Step 1: Pick a size</legend>
                     <label for="small">Small
                         <input required id="small" type="radio" name="size" value="small"  <%= query.size == "small" ? checked="checked" : checked="n" %>>
@@ -36,7 +36,7 @@
                     <button type="submit" formaction="#black" data-step="1">Go on to step 2</button>
                 </fieldset>
 
-                <fieldset>
+                <fieldset name="field-2">
                     <legend>Step 2: Pick a color for your t-shirt</legend>
                     <label for="black">Default: Black
                     <input checked id="black" type="radio" name="color" value="black"  <%= query.color == "black" ? checked="checked" : checked="n" %>>
@@ -61,7 +61,7 @@
                     <button type="submit" formaction="#black" data-step="2">Go on to step 3</button>
                 </fieldset>
 
-                <fieldset data-step="3">
+                <fieldset name="field-3" data-step="3">
                     <legend>Step 3: Write your text!</legend>
                     <label for="shirttext">Text
                     <textarea required name="shirtText" id="shirtText" maxlength="80"></textarea>
@@ -71,7 +71,7 @@
                     <button type="submit" formaction="#" data-step="1">Back to step 2</button>
                     <button type="submit" formaction="#black" data-step="3">Go on to step 4</button>
                 </fieldset>
-                <fieldset>
+                <fieldset name="field-4">
                     <label for="font">Choose a font</label>
                     <select name="font" id="font">
                         <option value="arial">Arial</option>
