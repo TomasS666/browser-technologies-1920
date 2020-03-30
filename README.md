@@ -74,6 +74,30 @@ But because I created the Javascript enhancement solidly on that use case, I had
 
 In my improvement I will still use the multiform, but into 2 simple steps, picking a size and then customizing the shirt. That's the main 2 steps. Then I split up steps in the second main step while the user is able to see the shirt itself.
 
+### SVG
+SVG is pretty well supported, yet a feature of SVG to embed regular HTML elements or other XML based markup isn't supported in IE. The so called ```ForeignObject```. Which is a shame. I wanted to use it as an enhancement, but it's hard to create a fallback for that.
+
+My SVG first looked like this: 
+
+```
+
+   <svg viewBox="0 0 271 276">
+                        <title>t-shirt</title>
+                        <g>
+                            <path
+                                d="M227.5,116.5l44-28-38-47c-16.49-14.89-21-23-34-25-14-1-16-1-29.33-5.32-2.22,1.64-15.59,3-34.67,3.83-19.08-.79-32.45-2.19-34.67-3.83C87.5,15.5,85.5,15.5,71.5,16.5c-13,2-17.51,10.11-34,25l-38,47,44,28,18-17-1,74.5H60v86.91A9.09,9.09,0,0,0,69.09,270H201.91a9.09,9.09,0,0,0,9.09-9.09V174h-.51l-1-74.5Z"
+                                stroke="#000" stroke-miterlimit="10" stroke-width="0.98" />
+                            <foreignObject x="75" y="60" width="120" height="160">
+                                <p><%= query.shirtText == "" ? "" : query.shirtText %></p>
+                            </foreignObject>
+                        </g>
+                        <image src="/img/shirt.jpg" alt="t-shirt">
+                    </svg>
+ ```
+ 
+ Yes, it can take the image fallback. But only if it doesn't support the SVG. It doesn't check if the foreignObject is enabled.
+ Therefore I went back to an image, a figcation as overlaw and serveral image sources to switch between colors.
+
 ## License
 
 ## Credits / references
