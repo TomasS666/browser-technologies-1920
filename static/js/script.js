@@ -5,6 +5,7 @@ if (document.querySelector('input[name="shirtText"]')) {
     var shirtInput = document.querySelector("input[name=shirtText]")
 
     var svg = document.querySelector("svg")
+    var shirt = svg.querySelector("path")
     // var g = document.createElement("g")
     // var svgText = document.createElement("text")
     // svgText
@@ -16,7 +17,38 @@ if (document.querySelector('input[name="shirtText"]')) {
     // g.append(svgText)
     // svg.append(g)
 
-    var svgText = document.querySelector("p")
+    var svgText = document.querySelector("p");
+
+
+
+    if(document.querySelector('[name="font"')){
+        var fontSelect = document.querySelector('[name="font"');
+    
+        fontSelect.addEventListener("change", function(event){
+            console.log(this.value)
+
+                console.log(event.target.tagName)
+                svgText.removeAttribute("class")
+                svgText.classList.add(this.value)
+            
+        })
+    }
+
+    if(document.querySelector('[name="shirtColor"')){
+        var fontSelect = document.querySelector('[name="shirtColor"');
+    
+        fontSelect.addEventListener("change", function(event){
+    
+
+                var target = event.target
+                if(target.tagName.toLowerCase() == "input"){
+                    shirt.removeAttribute("class")
+                    shirt.classList.add(target.value)
+                }
+               
+            
+        })
+    }
 
 
 
@@ -55,9 +87,32 @@ if (window.location.href.indexOf("/save?") > -1) {
 
 if(document.querySelector){
     var steps = document.querySelectorAll('[name^=field-]');
+
+
+    var btnStep1 = document.querySelector('button[data-step="1"]')
+    var btnStep2 = document.querySelector('button[data-step="2"]')
+
+    if(document.querySelector("form")){
+        multiStepForm(0)
+        var form = document.querySelector("form")
+        form.addEventListener("click", function(event){
+            
+            var target = event.target;
+            
+            if (target.tagName.toLowerCase() == "button" && target.hasAttribute("formaction") && target.getAttribute("formaction") != "/save") {
+                event.preventDefault()
+                multiStepForm(target.dataset.step)
+            }
+        })
+    }
+
     console.log(steps)
-    
 }
+
+
+// Font selector
+
+
 
 
 
@@ -68,3 +123,28 @@ function get(key, value) {
 function set(key, value) {
     return localStorage.setItem(key, value)
 }
+
+
+
+	// This function lets you go to the next step or prev step
+    function multiStepForm(currentIndex) {
+        if (document.querySelectorAll('[name^=field-]')) {
+    
+            // var currentIndex = 0;
+            var fieldsets = document.querySelectorAll('[name^=field-]');
+    
+    
+            for (var i = 0; i < fieldsets.length; i++) {
+                console.log("i " + i + "currentindex" + currentIndex)
+                if (i == currentIndex) {
+                    //show the current index;
+                    console.log('ik kom hier')
+                    fieldsets[i].classList.remove("hidden")
+                } else {
+                    //hide all the others
+                    fieldsets[i].classList.add("hidden")
+                }
+            }
+    
+        }
+    }

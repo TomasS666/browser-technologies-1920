@@ -1,6 +1,8 @@
 :root{
     --black: #000;
     --white: rgba(255, 255, 255, 1);
+    --red: #ff0000;
+    --blue: blue;
 }
 
 html,
@@ -46,14 +48,17 @@ label{
     margin: .5rem;
 }
 
+.arial, 
 option[value="arial"]{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.calibri, 
 option[value="calibri"]{
     font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.times-new-roman,
 option[value="times-new-roman"]{
     font-family: 'Times New Roman', Times, serif
 }
@@ -142,3 +147,14 @@ img{
 .hidden{
     display: none;
 }
+
+
+/* Colors */
+
+
+.red{
+    fill: var(--red);
+    fill: #ff0000;
+}
+
+
