@@ -38,8 +38,8 @@
 
                     <fieldset class="btn-group">
                         <input type="hidden" name="step" value="1">
-                        <button type="submit" formaction="#t-black" data-step="1">Go on to step 2</button>
                         <button type="submit" formaction="/save">Save</button>
+                        <button type="submit" formaction="#t-black" data-step="1">Go on to step 2</button>
                     </fieldset>
                 </fieldset>
 
@@ -96,9 +96,9 @@
                                 <legend>Pick a font for your shirt!</legend>
                                 <label for="font">Choose a font</label>
                                 <select name="font" id="font" size="3">
-                                    <option value="arial">Arial</option>
-                                    <option value="calibri">Calibri</option>
-                                    <option value="times-new-roman">Times New Roman</option>
+                                    <option <% if(query.font == "arial") {%> selected <% } %> value="arial">Arial</option>
+                                    <option <% if(query.font == "calibri") {%> selected <% } %> value="calibri">Calibri</option>
+                                    <option <% if(query.font == "times-new-roman") {%> selected <% } %> value="times-new-roman">Times New Roman</option>
                                 </select>
                             </fieldset>
 
@@ -106,8 +106,8 @@
                                 <legend>Adjust the text size</legend>
                                 <select name="fontSize" id="font-size" size="3">
                                     <option <% if(query.fontSize == "16") {%> selected <% } %> value="16">Regular</option>
-                                    <option value="32">Bigger</option>
-                                    <option value="64">Biggest</option>
+                                    <option <% if(query.fontSize == "32") {%> selected <% } %> value="32">Bigger</option>
+                                    <option <% if(query.fontSize == "64") {%> selected <% } %> value="64">Biggest</option>
                                 </select>
                             </fieldset>
 
@@ -124,15 +124,23 @@
                             </fieldset>
 
                             <figure>
-                                <img src="/img/black.jpg" alt="t-shirt"></img>
-                                <figcaption><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+                                <img 
+                                <% if(query.shirtColor){ %>
+                                    src="/img/<%= query.shirtColor %>.jpg"
+                                <% }else{ %>
+                                    src="/img/black.jpg"
+                                <% } %>
+                                    alt="t-shirt"></img>
+                                <figcaption class="<% if(query.font){%><%= query.font %><% } %>"
+                                 style="<% if(query.textColor){ %>color:<%- query.textColor _%>;<% } _%>
+                                    <% if(query.fontSize){ %>font-size:<%- query.fontSize -%>px<% } _%>"><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
                             </figure>
 
 
                             <fieldset class="btn-group">
                                 <button type="submit" formaction="#" data-step="0">Back to step 1</button>
                                 <button type="submit" formaction="/save">Save</button>
-                                <button type="submit" formaction="/result">Go on</button>
+                                <button type="submit">Go on</button>
                             </fieldset>
                         </div>
                     </div>
