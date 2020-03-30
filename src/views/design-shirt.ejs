@@ -36,7 +36,7 @@
 
                     <%= query.shirttext %>
 
-                    <fieldset>
+                    <fieldset class="btn-group">
                         <input type="hidden" name="step" value="1">
                         <button type="submit" formaction="/save">Save</button>
                         <button type="submit" formaction="#t-black" data-step="1">Go on to step 2</button>
@@ -57,39 +57,39 @@
 
 
                                 <input id="t-white" type="radio" name="shirtColor" value="white"
-                                <% if(query.shirtColor == "white") {%> checked="checked" <% } %>>
+                                    <% if(query.shirtColor == "white") {%> checked="checked" <% } %>>
                                 <label for="t-white" title="white"> </label>
 
 
                                 <input id="t-red" type="radio" name="shirtColor" value="red"
-                                <% if(query.shirtColor == "red") {%> checked="checked" <% } %>>
+                                    <% if(query.shirtColor == "red") {%> checked="checked" <% } %>>
                                 <label for="t-red" title="red"> </label>
 
 
                                 <input id="t-blue" type="radio" name="shirtColor" value="blue"
-                                <% if(query.shirtColor == "blue") {%> checked="checked" <% } %>>
+                                    <% if(query.shirtColor == "blue") {%> checked="checked" <% } %>>
                                 <label for="t-blue" title="blue"> </label>
                             </fieldset>
                             <fieldset name="textColor">
                                 <legend>Pick a text color</legend>
 
                                 <input checked id="text-black" type="radio" name="textColor" value="black"
-                                <% if(query.textColor == "black") {%> checked="checked" <% } %>>
+                                    <% if(query.textColor == "black") {%> checked="checked" <% } %>>
                                 <label for="text-black" title="black"></label>
 
 
-                                <input id="text-white" type="radio" name="textColor" value="white"
-                                <% if(query.textColor == "white") {%> checked="checked" <% } %>>
+                                <input id="text-white" type="radio" name="textColor" value="white" checked="checked"
+                                    <% if(query.textColor == "white") {%> checked="checked" <% } %>>
                                 <label for="text-white" title="white"></label>
 
 
                                 <input id="text-red" type="radio" name="textColor" value="red"
-                                <% if(query.textColor == "red") {%> checked="checked" <% } %>>
+                                    <% if(query.textColor == "red") {%> checked="checked" <% } %>>
                                 <label for="text-red" title="red"></label>
 
 
                                 <input id="text-blue" type="radio" name="textColor" value="blue"
-                                <% if(query.textColor == "blue") {%> checked="checked" <% } %>>
+                                    <% if(query.textColor == "blue") {%> checked="checked" <% } %>>
                                 <label for="text-blue" title="blue"></label>
                             </fieldset>
                             <fieldset>
@@ -109,7 +109,7 @@
                             <fieldset>
                                 <legend>Pick a text for your shirt.</legend>
                                 <label for="shirtText">Text
-                                    <input type="text" name="shirtText" id="shirtText"
+                                    <input type="text" name="shirtText" id="shirtText" required
                                         value="<%= query.shirtText == "" ? "" : query.shirtText %>">
                                 </label>
                             </fieldset>
@@ -118,9 +118,9 @@
                                 <img src="/img/black.jpg" alt="t-shirt"></img>
                                 <figcaption><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
                             </figure>
-                           
 
-                            <fieldset>
+
+                            <fieldset class="btn-group">
                                 <button type="submit" formaction="#" data-step="0">Back to step 1</button>
                                 <button type="submit" formaction="/save">Save</button>
                                 <button type="submit">Go on</button>

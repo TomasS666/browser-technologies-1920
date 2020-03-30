@@ -50,6 +50,7 @@ fieldset{
     background: #e0e0e0;
     border-radius: .5rem;
     padding: 1rem;
+    width: 25rem;
 }
 
 button{
@@ -59,6 +60,11 @@ button{
     color: #2f2f2f;
     font-weight: bold;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
 }
 
 button.active{
@@ -103,6 +109,8 @@ label:checked{
     border: orange solid .5rem;
 }
 
+
+
 [name="shirtColor"] input[type="radio"],
 [name="textColor"] input[type="radio"]{
     display: none;
@@ -127,6 +135,15 @@ input[name="shirtText"]{
 
 input[type="radio"]:checked + label{
     border: orange solid .25rem;
+}
+
+select[name="font"]{
+    width: 100%;
+}
+
+select[name="font"] option{
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .arial, 
@@ -155,6 +172,8 @@ text{
 
 figure{
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 img{
@@ -226,7 +245,13 @@ fieldset[data-step="3"]{
 table,
 td, th {
     border: 1px solid #333;
+    padding: 1rem;
 }
+
+table{
+    width: 100%;
+}
+
 
 fieldset[data-step="3"] img{
     max-width: 100%;
@@ -291,6 +316,16 @@ textarea{
 
 
 
+/* 
+
+
+    Print media query
+    Hide everything the user doens't need.
+
+    Like a button, a button is useless in print...
+
+*/
+
 @media print{
     header, button{
         display: none;
@@ -298,5 +333,20 @@ textarea{
 
     *{
         -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
+
+@media screen and (max-width: 64em){
+    .flex{
+        display: unset;
+    }
+    
+    .edit-controls{
+        margin: auto;
+    }
+
+    main, #content{
+        max-width: unset;
     }
 }
