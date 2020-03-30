@@ -19,7 +19,7 @@ var shirt = document.querySelector("img")
     // g.append(svgText)
     // svg.append(g)
 
-    var svgText = document.querySelector("p");
+
 
 
 
@@ -49,6 +49,23 @@ var shirt = document.querySelector("img")
                     // shirt.removeAttribute("class")
                     console.log(target.value)
                     shirt.src = "/img/" + target.value + ".jpg"
+                }
+               
+            
+        })
+    }
+
+    if(document.querySelector('[name="textColor"')){
+        var textColorSelect = document.querySelector('[name="textColor"');
+    
+        textColorSelect.addEventListener("change", function(event){
+    
+
+                var target = event.target
+                if(target.tagName.toLowerCase() == "input"){
+                    // shirt.removeAttribute("class")
+                    console.log(target.value)
+                    shirtText.style.color = target.value;
                 }
                
             

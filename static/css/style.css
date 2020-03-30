@@ -222,9 +222,28 @@ textarea{
     background-color: #fff;
 }
 
-[title="blue"], .white{
+[title="blue"], .blue{
     background-color: var(--blue);
     background-color: blue;
+}
+
+.text-red{
+    color: var(--red);
+    color: #ff0000;
+}
+.text-black{
+    color: var(--black);
+    color: #000;
+}
+
+.text-white{
+    color: var(--white);
+    color: #fff;
+}
+
+.text-blue{
+    color: var(--blue);
+    color: blue;
 }
 
 

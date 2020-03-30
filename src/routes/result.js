@@ -31,7 +31,7 @@ router.get('/result', (req, res) => {
     
     console.log(req.query)
 
-    createImage()
+    // createImage()
 
 
         res.render('result.ejs', {
