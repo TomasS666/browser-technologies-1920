@@ -111,7 +111,11 @@ https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 ## License
 
 ## Credits / references
-For using different shirt colors:
+Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
+
+Menno for the great feedback and help in between!
+
+For using different shirt color images:
 https://www.wordans.nl/
 
 
