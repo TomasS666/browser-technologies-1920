@@ -76,5 +76,10 @@ In my improvement I will still use the multiform, but into 2 simple steps, picki
 
 ## License
 
+## Credits / references
+For using different shirt colors:
+https://www.wordans.nl/
+
+
 [MIT License Copyright (c) 2020 Tomas S](https://github.com/TomasS666/browser-technologies-1920/blob/master/LICENSE)
 
