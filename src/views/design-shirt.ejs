@@ -6,51 +6,45 @@
         <section>
             <form action="/result">
                 <fieldset name="field-0" data-step="0">
-                    <legend>Step 1: Pick a size</legend>
-                    <label for="small">Small
-                        <input required id="small" type="radio" name="size" value="small"
-                            <%= query.size == "small" ? checked="checked" : checked="n" %>>
-                    </label>
-                    <label for="medium">Medium
-                        <input id="medium" type="radio" name="size" value="medium"
-                            <%= query.size == "medium" ? checked="checked" : checked="n" %>>
-                    </label>
-                    <label for="large">Large
-                        <input id="large" type="radio" name="size" value="large"
-                            <%= query.size == "large" ? checked="checked" : checked="n" %>>
-                    </label>
-                    <label for="xl">Extra Large
-                        <input id="xl" type="radio" name="size" value="xl"
-                            <%= query.size == "xl" ? checked="checked" : checked="n" %>>
-                    </label>
+                    <fieldset>
+                        <legend>Step 1: Pick a size</legend>
+                        <label for="small">Small
+                            <input required id="small" type="radio" name="size" value="small"
+                                <%= query.size == "small" ? checked="checked" : checked="n" %>>
+                        </label>
+                        <label for="medium">Medium
+                            <input id="medium" type="radio" name="size" value="medium"
+                                <%= query.size == "medium" ? checked="checked" : checked="n" %>>
+                        </label>
+                        <label for="large">Large
+                            <input id="large" type="radio" name="size" value="large"
+                                <%= query.size == "large" ? checked="checked" : checked="n" %>>
+                        </label>
+                        <label for="xl">Extra Large
+                            <input id="xl" type="radio" name="size" value="xl"
+                                <%= query.size == "xl" ? checked="checked" : checked="n" %>>
+                        </label>
 
-                    <label for="xxl">Extra Extra Large
-                        <input id="xxl" type="radio" name="size" value="xxl"
-                            <%= query.size == "xxl" ? checked="checked" : checked="n" %>>
-                    </label>
+                        <label for="xxl">Extra Extra Large
+                            <input id="xxl" type="radio" name="size" value="xxl"
+                                <%= query.size == "xxl" ? checked="checked" : checked="n" %>>
+                        </label>
+                    </fieldset>
 
                     <!-- <label for="reset">Reset</label>
                         <input type="reset" value="Reset the form" accesskey="r"> -->
 
                     <%= query.shirttext %>
 
-
-                    <input type="hidden" name="step" value="1">
-                    <button type="submit" formaction="/save">Save</button>
-                    <button type="submit" formaction="#black" data-step="1">Go on to step 2</button>
+                    <fieldset>
+                        <input type="hidden" name="step" value="1">
+                        <button type="submit" formaction="/save">Save</button>
+                        <button type="submit" formaction="#black" data-step="1">Go on to step 2</button>
+                    </fieldset>
                 </fieldset>
 
                 <fieldset name="field-1">
                     <legend>Step 2: Customize your shirt!</legend>
-                    <fieldset>
-                        <legend>Pick a text for your shirt.</legend>
-                        <label for="shirttext">Text
-                            <!-- <input name="shirtText" type="text"> -->
-                            <input type="text" name="shirtText" id="shirtText"
-                                value="<%= query.shirtText == "" ? "" : query.shirtText %>">
-                        </label>
-                    </fieldset>
-
                     <!-- <img src="/img/shirt.jpg" alt=""> -->
 
                     <fieldset name="shirtColor">
@@ -108,7 +102,7 @@
                     </fieldset>
 
 
-                    <svg viewBox="0 0 271 276">
+                    <!-- <svg viewBox="0 0 271 276">
                         <title>t-shirt</title>
                         <g>
                             <path
@@ -119,7 +113,19 @@
                             </foreignObject>
                         </g>
                         <image src="/img/shirt.jpg" alt="t-shirt">
-                    </svg>
+                    </svg> -->
+                    <figure>
+                        <image src="/img/black.jpg" alt="t-shirt"></image>
+                        <figcaption><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+                    </figure>
+                    <fieldset>
+                        <legend>Pick a text for your shirt.</legend>
+                        <label for="shirttext">Text
+                            <input type="text" name="shirtText" id="shirtText"
+                                value="<%= query.shirtText == "" ? "" : query.shirtText %>">
+                        </label>
+                    </fieldset>
+
                     <fieldset>
                         <button type="submit" formaction="#" data-step="0">Back to step 1</button>
                         <button type="submit" formaction="/save">Save</button>

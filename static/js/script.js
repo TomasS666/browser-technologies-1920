@@ -4,8 +4,10 @@ if (document.querySelector('input[name="shirtText"]')) {
     console.log("shirtInput")
     var shirtInput = document.querySelector("input[name=shirtText]")
 
-    var svg = document.querySelector("svg")
-    var shirt = svg.querySelector("path")
+var shirtText = document.querySelector("figcaption")
+var shirtColor = document.querySelector("img")
+
+
     // var g = document.createElement("g")
     // var svgText = document.createElement("text")
     // svgText
@@ -42,8 +44,9 @@ if (document.querySelector('input[name="shirtText"]')) {
 
                 var target = event.target
                 if(target.tagName.toLowerCase() == "input"){
-                    shirt.removeAttribute("class")
-                    shirt.classList.add(target.value)
+                    // shirt.removeAttribute("class")
+                    console.log(target.value)
+                    shirtColor.src = "/img/" + target.value + ".jpg"
                 }
                
             
@@ -54,7 +57,7 @@ if (document.querySelector('input[name="shirtText"]')) {
 
     shirtInput.addEventListener("input", function (event) {
 
-        svgText.textContent = shirtInput.value
+        shirtText.textContent = shirtInput.value
 
     })
 }

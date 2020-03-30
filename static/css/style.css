@@ -35,12 +35,21 @@ fieldset{
 }
 
 
+
+/* 
+    Text align doesn't work in IE
+    Margin: 0 auto works good for IE and everything else.
+    Yet I heared in some Firefox version it's not working either
+    Could use positioning and translating, but after doing that I found out it 
+    broke more than it fixed. That's why I'm sticking with the margin: 0 auto fallback, 
+    because it seems to work in most cases and it doesn't destroy as much. Works in IE and my Firefox version
+*/
 legend{
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     /* margin 0 auto fix for IE not text-aligning the legend */
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 label{
@@ -68,8 +77,26 @@ text{
     fill: red;
 }
 
-foreignObject p{
+/* foreignObject p{
     color: red;
+} */
+
+figure{
+    position: relative;
+}
+
+img{
+    max-width: 100%;
+}
+
+figcaption{
+    position: absolute;
+    word-break: break-all;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    max-width: 30%;
 }
 
 /* Menu */
@@ -100,10 +127,12 @@ nav ul li a:hover{
 
 /* Main */
 
-main{
+main, #content{
     /* width: 90vw;
     max-width: 90vw;
     margin: 0 auto; */
+    max-width: 50vw;
+    display: block;
 }
 
 
@@ -134,12 +163,6 @@ textarea{
     background-color: transparent;
     color: #fff;
 }
-
-img{
-    min-height: 300px;
-    min-width: 300px;
-}
-
 
 /* Classes */
 

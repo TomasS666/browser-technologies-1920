@@ -19,7 +19,10 @@
                 <% } %> 
                 </tbody>
             </table>
-            
+            <figure>
+                <image src="/img/<%= query.shirtColor %>.jpg" alt="t-shirt"></image>
+                <figcaption><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+            </figure>
             <!-- <form action="">
              
                 <button type="submit" formaction="/save">Save</button>
