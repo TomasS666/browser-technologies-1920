@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const path = require('path')
 
+const querystring = require('querystring');
+
 var Jimp = require("jimp");
 
 function createImage(){
@@ -37,7 +39,9 @@ router.get('/result', (req, res) => {
         res.render('result.ejs', {
             title: 'Design your shirt - Result',
             query: req.query,
-            url: req.protocol + '://' + req.get('host') + req.originalUrl
+            originalUrl: querystring.encode(req.query),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            baseurl: req.protocol + '://' + req.get('host')
         })
 
 })

@@ -29,6 +29,16 @@
                 <button>Go on</button>
 
             </form> -->
+
+            <% if(typeof url != 'undefined'){ %>
+                <p>Save this link: <a href="<%= url%>">Your shirt!</a></p>
+            <% }else{ %>
+                <p>Sorry, something went wrong</p>
+            <% } %>
+            
+            <a href="<%= baseurl + "/design-shirt/?" + originalUrl%>">Your shirt!</a>
+                Or go on with your shirt now
+            </a>
         </section>
     </main>
     <%- include('components/footer.ejs') %>
