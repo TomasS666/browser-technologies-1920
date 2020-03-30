@@ -1,7 +1,5 @@
 localStorage.clear()
 
-console.log(document.querySelector('input[name="shirtText"]'))
-
 if (document.querySelector('input[name="shirtText"]')) {
     console.log("shirtInput")
     var shirtInput = document.querySelector("input[name=shirtText]")
@@ -23,148 +21,45 @@ if (document.querySelector('input[name="shirtText"]')) {
 
 
     shirtInput.addEventListener("input", function (event) {
-        // console.log(shirtInput.value)
 
         svgText.textContent = shirtInput.value
 
     })
 }
 
+// check if on save route
+if (window.location.href.indexOf("/save?") > -1) {
+    // Detect if window has the method print
+    if(window.print){
+        // If so, create button element.
+        // This instead of insertAdjecentHTML so I can add eventlistener before appending it 
+        // And don't have to retrieve it out of the DOM again
 
-if (document.querySelector) {
-    // if (window.location.href.indexOf("/design-shirt") > -1) {
+        var printbtn = document.createElement("button")
+        var textNode = document.createTextNode("Print")
+        
+        printbtn.append(textNode)
 
-    // }
-
-    // Button to go to next or prev step
-    var buttons = document.querySelectorAll("button[data-step]")
-
-
-    if (document.querySelector("form")) {
-        var form = document.querySelector("form");
-
-        var bool = false;
-        form.addEventListener("click", function (event) {
-            // console.log(event.target)
-            var target = event.target;
-            if (target.tagName.toLowerCase() == "button" && target.hasAttribute("formaction") && target.getAttribute("formaction") != "/save") {
-                
-                // console.log(event.target, event.target.dataset.step)
-
-                event.preventDefault()
-
-                var step = event.target.dataset.step
-                var currentStep = form.querySelector("fieldset[name=field-" + step + "]")
-                var fields = currentStep.querySelectorAll("input")
-
-                console.log("Step" + String(step))
-                console.log(currentStep)
-
-
-                // values.push(getValues())
-
-                multiStepForm(Number(step))
-
-
-           
-
-                if (bool == true) {
-
-
-
-                    console.log(fields)
-                    for (var i = 0; i < fields.length; i++) {
-                        var e = fields[i]
-                        console.log("coming here")
-                        if (e.value != 'undefined') {
-
-                            if (e.getAttribute("type") == "radio") {
-                                if (e.checked) {
-                                    set(e.name, JSON.stringify(e.value))
-                                    set("step", JSON.stringify(step))
-                                }
-                            }
-
-                            bool = false
-                        } else {
-                            bool = false
-                        }
-                    }
-                    multiStepForm(Number(step))
-                } else {
-                    console.log("fill in")
-                }
-            }
+        // On click, print page
+        printbtn.addEventListener("click", function(e){
+            window.print()
         })
 
-
-        form.addEventListener("change", getValues)
-
-        function getValues(event) {
-            console.log(event.target.value)
-
-            for (var i = 0; i < form.elements.length; i++) {
-                var e = form.elements[i]
-                if (e.value != 'undefined') {
-
-                    // set(e.name, JSON.stringify(e.value))
-                    bool = true
-                } else {
-                    bool = false
-                }
-            }
-            console.log(bool)
-            return event.target.value
-        }
-    }
-    multiStepForm(0)
-
-    console.log(buttons)
-}
-
-
-
-
-// This function lets you go to the next step or prev step
-function multiStepForm(currentIndex) {
-    if (document.querySelectorAll("fieldset")) {
-
-        // var currentIndex = 0;
-        var fieldsets = document.querySelectorAll("fieldset");
-
-
-        for (var i = 0; i < fieldsets.length; i++) {
-            console.log("i " + i + "currentindex" + currentIndex)
-            if (i == currentIndex) {
-                //show the current index;
-                console.log('ik kom hier')
-                fieldsets[i].classList.remove("hidden")
-            } else {
-                //hide all the others
-                fieldsets[i].classList.add("hidden")
-            }
-        }
-
-        // fieldsets.forEach(function(fieldset, index){
-        //     console.log(fieldset)
-        //     console.log(index, currentIndex)
-        //     if(index == currentIndex){
-        //         fieldset.classList.remove("hidden")
-
-        //     }else{
-        //         fieldset.classList.add("hidden")
-        //     }
-
-        // })
-
+        // Wide browser support, but win for me because I can easily compose where I want
+        document.body.insertAdjacentElement('beforeend', printbtn)
     }
 }
 
-// var obj = {
-//     name: "Tomas"
-// }
 
-// set('user', JSON.stringify(obj))
+// Two steps
+
+if(document.querySelector){
+    var steps = document.querySelectorAll('[name^=field-]');
+    console.log(steps)
+    
+}
+
+
 
 function get(key, value) {
     return localStorage.getItem(key, value)
