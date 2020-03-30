@@ -59,15 +59,18 @@ label{
     /* display: block;
     margin: .5rem; */
     display: block;
-    margin: .5rem;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+
 }
 
 label:checked{
     border: orange solid .5rem;
 }
+
+/* .flex{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+} */
 
 [name="shirtColor"] input[type="radio"],
 [name="textColor"] input[type="radio"]{
@@ -77,6 +80,11 @@ label:checked{
 [name="shirtColor"] input[type="radio"] + label,
 [name="textColor"] input[type="radio"] + label{
     border: #000 solid .25rem;
+    display: block;
+    margin: .5rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
 }
 
 input[type="radio"]:checked + label{
