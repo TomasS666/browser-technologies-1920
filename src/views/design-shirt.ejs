@@ -38,8 +38,8 @@
 
                     <fieldset class="btn-group">
                         <input type="hidden" name="step" value="1">
-                        <button type="submit" formaction="/save">Save</button>
                         <button type="submit" formaction="#t-black" data-step="1">Go on to step 2</button>
+                        <button type="submit" formaction="/save">Save</button>
                     </fieldset>
                 </fieldset>
 
@@ -105,7 +105,7 @@
                             <fieldset name="fontSize">
                                 <legend>Adjust the text size</legend>
                                 <select name="fontSize" id="font-size" size="3">
-                                    <option value="16">Regular</option>
+                                    <option <% if(query.fontSize == "16") {%> selected <% } %> value="16">Regular</option>
                                     <option value="32">Bigger</option>
                                     <option value="64">Biggest</option>
                                 </select>
@@ -132,7 +132,7 @@
                             <fieldset class="btn-group">
                                 <button type="submit" formaction="#" data-step="0">Back to step 1</button>
                                 <button type="submit" formaction="/save">Save</button>
-                                <button type="submit">Go on</button>
+                                <button type="submit" formaction="/result">Go on</button>
                             </fieldset>
                         </div>
                     </div>
