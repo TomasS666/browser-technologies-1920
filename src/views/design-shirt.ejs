@@ -4,30 +4,31 @@
     <%- include('components/header.ejs') %>
     <main id="content">
         <section>
+            <h1>Customize your own shirt!</h1>
             <form action="/result">
                 <fieldset name="field-0" data-step="0">
                     <fieldset name="size">
                         <legend>Step 1: Pick a size</legend>
                         <label for="small">Small
                             <input required id="small" type="radio" name="size" value="small"
-                                <%= query.size == "small" ? checked="checked" : checked="n" %>>
+                                <% if(query.size == "small") {%> checked="checked" <% } %>>
                         </label>
                         <label for="medium">Medium
-                            <input id="medium" type="radio" name="size" value="medium"
-                                <%= query.size == "medium" ? checked="checked" : checked="n" %>>
+                            <input id="medium" type="radio" name="size" value="medium" <% if(query.size == "medium") {%>
+                                checked="checked" <% } %>>
                         </label>
                         <label for="large">Large
-                            <input id="large" type="radio" name="size" value="large"
-                                <%= query.size == "large" ? checked="checked" : checked="n" %>>
+                            <input id="large" type="radio" name="size" value="large" <% if(query.size == "large") {%>
+                                checked="checked" <% } %>>
                         </label>
                         <label for="xl">Extra Large
-                            <input id="xl" type="radio" name="size" value="xl"
-                                <%= query.size == "xl" ? checked="checked" : checked="n" %>>
+                            <input id="xl" type="radio" name="size" value="xl" <% if(query.size == "xl") {%>
+                                checked="checked" <% } %>>
                         </label>
 
                         <label for="xxl">Extra Extra Large
-                            <input id="xxl" type="radio" name="size" value="xxl"
-                                <%= query.size == "xxl" ? checked="checked" : checked="n" %>>
+                            <input id="xxl" type="radio" name="size" value="xxl" <% if(query.size == "xxl") {%>
+                                checked="checked" <% } %>>
                         </label>
                     </fieldset>
 
@@ -96,18 +97,24 @@
                                 <legend>Pick a font for your shirt!</legend>
                                 <label for="font">Choose a font</label>
                                 <select name="font" id="font" size="3">
-                                    <option <% if(query.font == "arial") {%> selected <% } %> value="arial">Arial</option>
-                                    <option <% if(query.font == "calibri") {%> selected <% } %> value="calibri">Calibri</option>
-                                    <option <% if(query.font == "times-new-roman") {%> selected <% } %> value="times-new-roman">Times New Roman</option>
+                                    <option <% if(query.font == "arial") {%> selected <% } %> value="arial">Arial
+                                    </option>
+                                    <option <% if(query.font == "calibri") {%> selected <% } %> value="calibri">Calibri
+                                    </option>
+                                    <option <% if(query.font == "times-new-roman") {%> selected <% } %>
+                                        value="times-new-roman">Times New Roman</option>
                                 </select>
                             </fieldset>
 
                             <fieldset name="fontSize">
                                 <legend>Adjust the text size</legend>
                                 <select name="fontSize" id="font-size" size="3">
-                                    <option <% if(query.fontSize == "16") {%> selected <% } %> value="16">Regular</option>
-                                    <option <% if(query.fontSize == "32") {%> selected <% } %> value="32">Bigger</option>
-                                    <option <% if(query.fontSize == "64") {%> selected <% } %> value="64">Biggest</option>
+                                    <option <% if(query.fontSize == "16") {%> selected <% } %> value="16">Regular
+                                    </option>
+                                    <option <% if(query.fontSize == "32") {%> selected <% } %> value="32">Bigger
+                                    </option>
+                                    <option <% if(query.fontSize == "64") {%> selected <% } %> value="64">Biggest
+                                    </option>
                                 </select>
                             </fieldset>
 
@@ -124,16 +131,11 @@
                             </fieldset>
 
                             <figure>
-                                <img 
-                                <% if(query.shirtColor){ %>
-                                    src="/img/<%= query.shirtColor %>.jpg"
-                                <% }else{ %>
-                                    src="/img/black.jpg"
-                                <% } %>
-                                    alt="t-shirt"></img>
-                                <figcaption class="<% if(query.font){%><%= query.font %><% } %>"
-                                 style="<% if(query.textColor){ %>color:<%- query.textColor _%>;<% } _%>
-                                    <% if(query.fontSize){ %>font-size:<%- query.fontSize -%>px<% } _%>"><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+                                <img <% if(query.shirtColor){ %> src="/img/<%= query.shirtColor %>.jpg" <% }else{ %>
+                                    src="/img/black.jpg" <% } %> alt="t-shirt"></img>
+                                <figcaption class="<% if(query.font){%><%= query.font %><% } %>" style="<% if(query.textColor){ %>color:<%- query.textColor _%>;<% } _%>
+                                    <% if(query.fontSize){ %>font-size:<%- query.fontSize -%>px<% } _%>">
+                                    <%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
                             </figure>
 
 
