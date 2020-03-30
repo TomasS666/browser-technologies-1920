@@ -39,7 +39,7 @@
                     <fieldset>
                         <input type="hidden" name="step" value="1">
                         <button type="submit" formaction="/save">Save</button>
-                        <button type="submit" formaction="#black" data-step="1">Go on to step 2</button>
+                        <button type="submit" formaction="#t-col-black" data-step="1">Go on to step 2</button>
                     </fieldset>
                 </fieldset>
 
@@ -49,47 +49,47 @@
 
                     <fieldset name="shirtColor">
                         <legend>Pick a color for your t-shirt</legend>
-                        <label for="black">Default: Black
-                            <input checked id="black" type="radio" name="shirtColor" value="black"
+       
+                            <input checked id="t-black" type="radio" name="shirtColor" value="black"
                                 <%= query.shirtColor == "black" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="t-black" title="black">    </label>
 
-                        <label for="white">White
-                            <input id="white" type="radio" name="shirtColor" value="white"
+                      
+                            <input id="t-white" type="radio" name="shirtColor" value="white"
                                 <%= query.shirtColor == "white" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="t-white" title="white">   </label>
 
-                        <label for="red">Red
-                            <input id="red" type="radio" name="shirtColor" value="red"
+                     
+                            <input id="t-red" type="radio" name="shirtColor" value="red"
                                 <%= query.shirtColor == "red" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="t-red" title="red">     </label>
 
-                        <label for="blue">Blue
-                            <input id="blue" type="radio" name="shirtColor" value="blue"
+                 
+                            <input id="t-blue" type="radio" name="shirtColor" value="blue"
                                 <%= query.shirtColor == "blue" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="t-blue" title="blue">  </label>
                     </fieldset>
-                    <fieldset>
+                    <fieldset name="textColor">
                         <legend>Pick a text color</legend>
-                        <label for="black">Default: Black
-                            <input checked id="black" type="radio" name="textColor" value="black"
+                       
+                            <input checked id="text-black" type="radio" name="textColor" value="black"
                                 <%= query.textColor == "black" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="text-black" title="black"></label>
 
-                        <label for="white">White
-                            <input id="white" type="radio" name="textColor" value="white"
+                       
+                            <input id="text-white" type="radio" name="textColor" value="white"
                                 <%= query.textColor == "white" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="text-white" title="white"></label>
 
-                        <label for="red">Red
-                            <input id="red" type="radio" name="textColor" value="red"
+                        
+                            <input id="text-red" type="radio" name="textColor" value="red"
                                 <%= query.textColor == "red" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="text-red" title="red"></label>
 
-                        <label for="blue">Blue
-                            <input id="blue" type="radio" name="textColor" value="blue"
+                        
+                            <input id="text-blue" type="radio" name="textColor" value="blue"
                                 <%= query.textColor == "blue" ? checked="checked" : checked="n" %>>
-                        </label>
+                                <label for="text-blue" title="blue"></label>
                     </fieldset>
                     <fieldset>
                         <legend>Pick a font for your shirt!</legend>

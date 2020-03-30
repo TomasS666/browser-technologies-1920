@@ -5,9 +5,12 @@
     --blue: blue;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html,
 body{
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -53,8 +56,31 @@ legend{
 }
 
 label{
+    /* display: block;
+    margin: .5rem; */
     display: block;
     margin: .5rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+label:checked{
+    border: orange solid .5rem;
+}
+
+[name="shirtColor"] input[type="radio"],
+[name="textColor"] input[type="radio"]{
+    display: none;
+}
+
+[name="shirtColor"] input[type="radio"] + label,
+[name="textColor"] input[type="radio"] + label{
+    border: #000 solid .25rem;
+}
+
+input[type="radio"]:checked + label{
+    border: orange solid .25rem;
 }
 
 .arial, 
@@ -175,9 +201,32 @@ textarea{
 /* Colors */
 
 
-.red{
-    fill: var(--red);
-    fill: #ff0000;
+[title="red"], .red{
+    background-color: var(--red);
+    background-color: #ff0000;
+}
+[title="black"], .black{
+    background-color: var(--black);
+    background-color: #000;
+}
+[title="white"], .white{
+    background-color: var(--white);
+    background-color: #fff;
+}
+
+[title="blue"], .white{
+    background-color: var(--blue);
+    background-color: blue;
 }
 
 
+
+@media print{
+    header, button{
+        display: none;
+    }
+
+    *{
+        -webkit-print-color-adjust: exact;
+    }
+}

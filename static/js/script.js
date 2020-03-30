@@ -5,7 +5,7 @@ if (document.querySelector('input[name="shirtText"]')) {
     var shirtInput = document.querySelector("input[name=shirtText]")
 
 var shirtText = document.querySelector("figcaption")
-var shirtColor = document.querySelector("img")
+var shirt = document.querySelector("img")
 
 
     // var g = document.createElement("g")
@@ -30,23 +30,25 @@ var shirtColor = document.querySelector("img")
             console.log(this.value)
 
                 console.log(event.target.tagName)
-                svgText.removeAttribute("class")
-                svgText.classList.add(this.value)
+                // svgText.removeAttribute("class")
+                // svgText.classList.add(this.value)
+
+                shirtText.className = this.value
             
         })
     }
 
     if(document.querySelector('[name="shirtColor"')){
-        var fontSelect = document.querySelector('[name="shirtColor"');
+        var shirtColorSelect = document.querySelector('[name="shirtColor"');
     
-        fontSelect.addEventListener("change", function(event){
+        shirtColorSelect.addEventListener("change", function(event){
     
 
                 var target = event.target
                 if(target.tagName.toLowerCase() == "input"){
                     // shirt.removeAttribute("class")
                     console.log(target.value)
-                    shirtColor.src = "/img/" + target.value + ".jpg"
+                    shirt.src = "/img/" + target.value + ".jpg"
                 }
                
             
@@ -62,8 +64,13 @@ var shirtColor = document.querySelector("img")
     })
 }
 
+
+function isPage(term){
+    return window.location.href.indexOf(term) > -1
+}
+
 // check if on save route
-if (window.location.href.indexOf("/save?") > -1) {
+if (isPage("/save?") || isPage("/result?")) {
     // Detect if window has the method print
     if(window.print){
         // If so, create button element.
@@ -73,7 +80,7 @@ if (window.location.href.indexOf("/save?") > -1) {
         var printbtn = document.createElement("button")
         var textNode = document.createTextNode("Print")
         
-        printbtn.append(textNode)
+        printbtn.appendChild(textNode)
 
         // On click, print page
         printbtn.addEventListener("click", function(e){
