@@ -18,10 +18,10 @@
                     </tr>
                 <% } %> 
                 </tbody>
-            </table>
+            </table>    
             <figure>
-                <image src="/img/<%= query.shirtColor %>.jpg" alt="t-shirt"></image>
-                <figcaption><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+                <img src="/img/<%= query.shirtColor %>.jpg" alt="t-shirt"></img>
+                <figcaption class="text-<%= query.textColor%>"><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
             </figure>
             <!-- <form action="">
              

@@ -52,6 +52,26 @@ fieldset{
     padding: 1rem;
 }
 
+button{
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+button.active{
+    background-color: #27a6ff;
+    /* border-bottom: 2px solid red; */
+    color: #fff;
+    border: none;
+    box-shadow: 0.125rem 0.125rem 0.125rem 0.066rem #848484;
+}
+
+
+
+
 /* 
     Text align doesn't work in IE
     Margin: 0 auto works good for IE and everything else.

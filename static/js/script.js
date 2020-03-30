@@ -118,6 +118,17 @@ if(document.querySelector){
 
     var btnStep1 = document.querySelector('button[data-step="1"]')
     var btnStep2 = document.querySelector('button[data-step="2"]')
+    
+    
+    var filled = false;
+    // btnStep1.disable = true;
+
+    var sizeField = document.querySelector('fieldset[name=size]');
+
+
+    sizeField.addEventListener("click", function(event){
+        event.target
+    })
 
     if(document.querySelector("form")){
         multiStepForm(0)
@@ -128,6 +139,11 @@ if(document.querySelector){
             
             if (target.tagName.toLowerCase() == "button" && target.hasAttribute("formaction") && target.getAttribute("formaction") != "/save") {
                 event.preventDefault()
+
+                // if(filled){
+                //     multiStepForm(target.dataset.step)
+                // }
+
                 multiStepForm(target.dataset.step)
             }
         })
