@@ -73,6 +73,24 @@ if (document.querySelector('input[name="shirtText"]')) {
     }
 
 
+    if (document.querySelector('[name="fontSize"')) {
+        var textSize = document.querySelector('select[name="fontSize"');
+
+        textSize.addEventListener("change", function (event) {
+
+            var target = event.target
+            // console.log(target)
+            // if (target.tagName.toLowerCase() == "option") {
+                // shirt.removeAttribute("class")
+                console.log(target.value)
+                shirtText.style.fontSize = this.value + "px";
+            // }
+
+
+        })
+    }
+
+
 
     shirtInput.addEventListener("input", function (event) {
 
@@ -124,7 +142,17 @@ if (!isPage("/result?") && !isPage("/save?")) {
     btnStep1.disabled = true;
 
     var sizeField = document.querySelector('fieldset[name=size]');
+    
+    var isChecked = Array.from(sizeField.querySelectorAll("input")).some(function(input){
+        return input.checked == true
+    })
 
+    if(isChecked){
+        var filled = true;
+        btnStep1.disabled = false;
+    }
+
+    console.log(isChecked)
 
     sizeField.addEventListener("change", function (event) {
         var target = event.target;

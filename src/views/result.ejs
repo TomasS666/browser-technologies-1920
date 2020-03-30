@@ -11,7 +11,11 @@
                     <th>Property</th>
                     <th>Value</th>
                 </tr>
-                <% for (const [key, value] of Object.entries(query)) {%>
+                <% for (const [key, value] of overviewData) {
+                    if(key == "step"){
+                        continue
+                    }
+                    %>
                     <tr>
                         <td><%= key %></td> 
                         <td><%= value %></td>
@@ -21,7 +25,13 @@
             </table>    
             <figure>
                 <img src="/img/<%= query.shirtColor %>.jpg" alt="t-shirt"></img>
-                <figcaption class="text-<%= query.textColor%>"><%= query.shirtText == "" ? "" : query.shirtText %></figcaption>
+                <figcaption 
+                    class="<%=query.font%>"
+                    style="<% if(query.textColor){ %>color:<%- query.textColor _%>;<% } _%>
+                           <% if(query.fontSize){ %>font-size:<%- query.fontSize -%>px<% } _%>"
+                    >
+                    <%= query.shirtText == "" ? "" : query.shirtText %>
+                </figcaption>
             </figure>
             <!-- <form action="">
              

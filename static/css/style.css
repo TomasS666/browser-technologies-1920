@@ -67,12 +67,13 @@ button:disabled{
     cursor: not-allowed;
 }
 
-button.active{
+fieldset[name^="field-"] fieldset:valid ~ fieldset button{
     background-color: #27a6ff;
     /* border-bottom: 2px solid red; */
     color: #fff;
     border: none;
     box-shadow: 0.125rem 0.125rem 0.125rem 0.066rem #848484;
+    transition: background-color .5s;
 }
 
 

@@ -35,9 +35,33 @@ router.get('/result', (req, res) => {
 
     // createImage()
 
+        let props = [
+            "Size",
+            "Shirt",
+            "Shirt color",
+            "Text color",
+            "Font",
+            "Font size",
+            "Text"
+        ]
 
+        const overviewData = Object.entries(req.query)
+                      .map((pair, i) =>{
+                          
+                              
+                          
+                          return [props[i],pair[1]]
+                      })
+                      .filter(arr => {
+                        if(arr[0] != "step"){ 
+                            return true
+                        }
+                      })
+                 
+        
         res.render('result.ejs', {
             title: 'Design your shirt - Result',
+            overviewData: overviewData,
             query: req.query,
             originalUrl: querystring.encode(req.query),
             url: req.protocol + '://' + req.get('host') + req.originalUrl,
