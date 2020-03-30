@@ -1,3 +1,106 @@
+:root{
+    --black: #000;
+    --white: rgba(255, 255, 255, 1);
+}
+
+html,
+body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+html,
+body,
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 11px 0px var(--black);
+    box-shadow: 0px 0px 11px 0px #000;
+}
+
+
+fieldset{
+    /* text-align: center; */
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+
+legend{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    /* margin 0 auto fix for IE not text-aligning the legend */
+    margin:0 auto;
+}
+
+label{
+    display: block;
+    margin: .5rem;
+}
+
+option[value="arial"]{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+option[value="calibri"]{
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+option[value="times-new-roman"]{
+    font-family: 'Times New Roman', Times, serif
+}
+
+text{
+    font-size: 3rem;
+    fill: red;
+}
+
+foreignObject p{
+    color: red;
+}
+
+/* Menu */
+
+nav{
+    background-color: #000;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    display: inline-block;
+    padding: 2rem;
+    color: var(white);
+    color: #fff;
+}
+
+nav ul li a:hover{
+    color: var(--black);
+    color: #000;
+    background-color: var(--white);
+    background-color: #fff;
+}
+
+
+/* Main */
+
+main{
+    /* width: 90vw;
+    max-width: 90vw;
+    margin: 0 auto; */
+}
+
 
 fieldset[data-step="3"]{
     position: relative;
@@ -30,4 +133,12 @@ textarea{
 img{
     min-height: 300px;
     min-width: 300px;
+}
+
+
+/* Classes */
+
+
+.hidden{
+    display: none;
 }

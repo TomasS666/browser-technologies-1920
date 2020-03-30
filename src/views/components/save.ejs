@@ -3,15 +3,13 @@
 
 
 <% if(typeof url != 'undefined'){ %>
-    Save this link: <a href="<%= baseurl + "/design-shirt/" + url %>">Your shirt!</a>
+    <p>Save this link: <a href="<%= baseurl + "/design-shirt/" + url %>">Your shirt!</a></p>
 <% }else{ %>
-    Sorry, something went wrong
+    <p>Sorry, something went wrong</p>
 <% } %>
 
 <a href="<%= url %>">
-
     Or go on with your shirt now
-
 </a>
 
 <%- include('footer.ejs') %>
