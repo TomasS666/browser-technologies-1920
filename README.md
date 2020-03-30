@@ -1,6 +1,9 @@
 # Browser Technologies @cmda-minor-web 1920
 ![project banner](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/BT-shirt-poster.png)
 
+## Link to demo
+https://bt-tomas.herokuapp.com/
+
 ## Questions for feedback (NL)
 1. Waarom zou je custom properties gebruiken als je voor IE en andere browsers alsnog een fallback eronder moet definiëren?
 Ik vind custom properties geweldig, maar nu ben je alles 2 keer aan het doen terwijl de nieuwe browsers en devices de fallback ook ondersteunen.
@@ -97,6 +100,13 @@ My SVG first looked like this:
  
  Yes, it can take the image fallback. But only if it doesn't support the SVG. It doesn't check if the foreignObject is enabled.
  Therefore I went back to an image, a figcation as overlaw and serveral image sources to switch between colors.
+ 
+### Figure & Figcation do the job
+#### Word-break: break-all 
+#### Max width not working? Oh no, it's the main element
+The main element is not supported everywhere or has partial support. That's why the max-width rule didn't apply on the main element in IE 11. It's not seen as a block element.
+I fixed it with the solution found below. I apply a display: block to the main element so it does take applied max-width rule.
+https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
 ## License
 
