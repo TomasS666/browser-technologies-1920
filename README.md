@@ -260,11 +260,18 @@ The Lighthouse audit with a high black-white contrast:
 ![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
 
 
-## Audit scores 
-
-
 ### Meta description 
 Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
+
+
+## Conclusion and last words
+I thought it was a very intense course, although that gave me a big eye-opener and a very educational process. This course learned me all about accesability and inclusive design. Yes a made a multi-step form, great, wasn't very useful in the end and it gave me more trouble than without the use of the form. With every bug fix, there were 99 more bugs. 
+
+I started out with plain HTML, but along the way of adding usebale CSS and enhancements in CSS and JS, the structure changed a lot overall. You don't only add CSS or JS on top of it. Your whole application needs to be restructured to move to that next step, which is pretty hard since a lot of functionallity that we're used to, is simply not avaible in a lot of browsers and devices. This took a lot of time and effort. Yes, then you get a better, more inclusive design, but it also requires a lot of time to test everything everywhere. I think it's mainly assumptions I made that were my bottleneck. For instance I figured out myself the use of ```const``` and ```let``` would break on a lot of browsers since it's ES6 syntax which still has bad support for some browsers. So I used ```var``` instead. But the problem went way deeper. Things like ```addEventListener``` don't work in older versions of IE. 
+
+I also learned to think about wether you can do something server-side. I'm already a fan of doing so, but with this course I got more creativity of handling more simple things on the server. Things that would be overkill in client-side JS.
+
+And last but not least, inclusive design is all about enabling everyone to use your website. Not only taking blind people, people with bad sight into account. No everyone can benefit from a more inclusive design. It goes way beyond that. The web is for everyone, it should look cooler if your hardware can take it, but it should work when hardware is a little less up to date.
 
 ## Credits / references
 Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
