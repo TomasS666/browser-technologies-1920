@@ -48,17 +48,24 @@ fieldset{
 
 .edit-controls{
     background: #e0e0e0;
+    border-radius: 8px;    ;
     border-radius: .5rem;
+    padding: 16px;
     padding: 1rem;
+    width: 400px;
     width: 25rem;
 }
 
 button{
+    width: 160px;
     width: 10rem;
+    padding: 16px;
     padding: 1rem;
+    border-radius: 16px;
     border-radius: 1rem;
     color: #2f2f2f;
     font-weight: bold;
+    font-size: 16px;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -73,12 +80,15 @@ fieldset[name^="field-"] fieldset:valid ~ fieldset button,
     /* border-bottom: 2px solid red; */
     color: #fff;
     border: none;
-    box-shadow: 0.125rem 0.125rem 0.125rem 0.066rem #848484;
     transition: background-color .5s;
+    box-shadow: 2px 2px 2px 1.056px #848484;
+    box-shadow: 0.125rem 0.125rem 0.125rem 0.066rem #848484;
 }
 
 .active{
+    padding: 16px;
     padding: 1rem;
+    border-radius: 16px;
     border-radius: 1rem;
     animation: jump .5s;
 }
@@ -99,6 +109,7 @@ fieldset[name^="field-"] fieldset:valid ~ fieldset button,
 */
 legend{
     text-align: center;
+    font-size: 32px;
     font-size: 2rem;
     font-weight: bold;
     /* margin 0 auto fix for IE not text-aligning the legend */
@@ -106,17 +117,16 @@ legend{
 }
 
 fieldset fieldset legend{
+    font-size: 16px;
     font-size: 1rem;
 }
 
 label{
-    /* display: block;
-    margin: .5rem; */
     display: block;
-
 }
 
 label:checked{
+    border: orange solid 8px;
     border: orange solid .5rem;
 }
 
@@ -129,25 +139,34 @@ label:checked{
 
 [name="shirtColor"] input[type="radio"] + label,
 [name="textColor"] input[type="radio"] + label{
+    border: #000 solid 4px;
     border: #000 solid .25rem;
     display: inline-block;
+    margin: 8px;
     margin: .5rem;
     border-radius: 50%;
+    width: 32px;
     width: 2rem;
+    height: 32px;
     height: 2rem;
 }
 
 input[name="shirtText"]{
+    width: 320px;
     width: 20rem;
+    border-radius: 4px;
     border-radius: .25rem;
+    border: grey solid 2px;
     border: grey solid .125rem;
 }
 
 input[type="text"]{
+    padding: 16px;
     padding: 1rem;
 }
 
 input[type="radio"]:checked + label{
+    border: orange solid 4px;
     border: orange solid .25rem;
 }
 
@@ -156,7 +175,9 @@ select{
 }
 
 select option{
+    padding: 16px;
     padding: 1rem;
+    font-size: 16px;
     font-size: 1rem;
 }
 
@@ -176,6 +197,7 @@ option[value="times-new-roman"]{
 }
 
 text{
+    font-size: 48px;
     font-size: 3rem;
     fill: red;
 }
@@ -221,6 +243,7 @@ nav ul li{
 
 nav ul li a{
     display: inline-block;
+    padding: 32px;
     padding: 2rem;
     color: var(white);
     color: #fff;
@@ -260,10 +283,11 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    padding: .5rem;
   }
   
 tr:nth-child(even) {
-background-color: #dddddd;
+    background-color: #dddddd;
 }
 
 table{
@@ -351,7 +375,7 @@ textarea{
     }
 
     50%{
-        transform: translate(0, -1rem);
+        transform: translate(0, -16px);
     }
 
     100%{
@@ -382,6 +406,7 @@ textarea{
 
     main, #content{
         max-width: unset;
+        padding: 8px;
         padding: .5rem;
     }
 
@@ -391,10 +416,14 @@ textarea{
 
     button, .active{
         width: 100%;
-        padding: 1rem;
+        padding: 16px;  
+        padding: 1rem;  
+        border-radius: 16px;
         border-radius: 1rem;
         font-weight: bold;
+        margin-bottom: 16px;
         margin-bottom: 1rem;
+        font-size: 16px;
         font-size: 1rem;
         cursor: pointer;
     }

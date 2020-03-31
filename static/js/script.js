@@ -195,12 +195,6 @@ if (isPage("/result?")) {
     console.log("test")
     if (navigator.share) {
 
-        // const btn = document.querySelector('button.share');
-        // btn.classList.add("show")
-        // btn.classList.remove("hidden")
-        // const resultPara = document.querySelector('.result');
-
-
         var shareButton = document.createElement("button")
         var textNode = document.createTextNode("Share")
 
@@ -208,15 +202,15 @@ if (isPage("/result?")) {
 
         // On click, share page
         shareButton.addEventListener("click", function (e) {
-            const title = window.document.title;
-            const url = window.document.location.href;
+            var title = window.document.title;
+            var url = window.document.location.href;
 
-            const file = {
+            var file = {
                 title: title,
                 url: url
             }
 
-            navigator.share(file).then(() => {
+            navigator.share(file).then(function(e){
                 console.log('nice');
             })
         })
