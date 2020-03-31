@@ -54,18 +54,20 @@ or you can download the zip file or something similar by clicking on the green b
 * Print button for convenience ( **gonna add that with feature detection of the JS window.print() method ** )
 
 ## Known bugs
-* Missing navigation
-* Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
-Gonna remove that.
+* ~Missing navigation~
+* ~Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
+Gonna remove that.~
+* When JS is enabled and you want to go on in the first step without selecting anything, the verification warning isn't showing because the button has a different formaction. When you do fill in something the button gets enabled with a jumpy animation and a different color. Another problem is that color-blind people who suffer from Monochromacy / Achromatopsia, who see no color at all but only light intensity don't have the same experience. Can fix that by adding the buttons when you filled in the form, so the user can focus on the form itself first. But it's debatable if that's a better UX since it's less discoverable. But I haven't fixed that yet.
 
 ## Process 
 
 ### Feature detection
 
 ### Direct manipulation enhancement
-I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to 
+I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to break text lines in SVG without a lot of additional logic. So at some point the cost of SVG was higher if we're talking about accesability. Later in this readme a bit more indept about challenges I encountered with SVG.
 
 ### LocalStorage as enhancement
+I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement
 
 ### Multiform as enhancement
 Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage.
