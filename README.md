@@ -178,7 +178,22 @@ On Safari it broke some flexbox things. For instance the figure I'm using. The f
 
 
 ## Can you control the site with keyboard-only?
-Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there. So I tried ```css visibility: hidden``` but that didn't have the desired result either. 
+Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there. So I tried ```css visibility: hidden``` but that didn't have the desired result either. In the end Ramon told me I could give the input a width of zero. This works like a charm. I implemented it that way and applied styling on the label of the checkbox is focussed. I also added style to the surrounding fieldset with focus-within. That's supported everywhere though. So it can be seen as an enhancement.
+
+
+```css
+fieldset fieldset:focus-within{
+    border: orange solid 4px;
+    border: orange solid .25rem;
+}
+
+input[type="radio"]:checked + label,
+input[type="radio"]:focus + label{
+    border: orange solid 4px;
+    border: orange solid .25rem;
+}
+```
+
 
 ## Without Javascript?
 Without Javascript the whole form is visible. So everything works. What I could have done nicer is actually appending the button "go to next step". Because now it's in the DOM anyway. The result is that only on the last submit it checks on the client if the fields are valid. But it's okay because the formaction of the button goes to the next fieldset when JS is disabled.
