@@ -178,7 +178,16 @@ On IE9 the functionality works so far that it should enable the user to make the
 ### IE11
 
 ### Safari
-On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width. Yet on some viewports 
+On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width, like so:
+
+![layout breaking](images/usable%20layer/without-flex-so-inline-block.png)
+
+
+That's why I changed ```display: block``` to ```display: inline-block;``` because it's supported more widely than flex box. And it wasn't a complex layout either, so this was the way to go. And now it looked like this:
+
+![layout good](images/usable%20layer/inline-block.png)
+
+
 
 ## Devices
 ## Iphone 5
