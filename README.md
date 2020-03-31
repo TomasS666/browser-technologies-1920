@@ -177,6 +177,10 @@ On Safari it broke some flexbox things. For instance the figure I'm using. The f
 ## Huawei P20 Mate lite
 
 
+## Can you control the site with keyboard-only?
+Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there.
+
+
 ## Audit scores 
 
 ### Contrast
