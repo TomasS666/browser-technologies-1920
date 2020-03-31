@@ -138,24 +138,26 @@ if (!isPage("/result?") && !isPage("/save?")) {
     var btnStep1 = document.querySelector('button[data-step="1"]')
     var btnStep2 = document.querySelector('button[data-step="2"]')
 
-
-    var filled = false;
-    btnStep1.disabled = true;
-
     var sizeField = document.querySelector('fieldset[name=size]');
-    
-    var isChecked = Array.from(sizeField.querySelectorAll("input")).some(function(input){
-        return input.checked == true
-    })
+    if(Array.from){
+        var filled = false;
+        btnStep1.disabled = true;
 
-    if(isChecked){
-        var filled = true;
-        btnStep1.disabled = false;
-        btnStep1.classList.add("active")
+       
+        
+        
+        var isChecked = Array.from(sizeField.querySelectorAll("input")).some(function(input){
+            return input.checked == true
+        })
+
+        if(isChecked){
+            var filled = true;
+            btnStep1.disabled = false;
+            btnStep1.classList.add("active")
+        }
+
+        console.log(isChecked)
     }
-
-    console.log(isChecked)
-
     sizeField.addEventListener("change", function (event) {
         var target = event.target;
 
@@ -170,6 +172,7 @@ if (!isPage("/result?") && !isPage("/save?")) {
 
     if (document.querySelector("form")) {
         multiStepForm(0)
+        console.log("nee?")
         var form = document.querySelector("form")
         form.addEventListener("click", function (event) {
 
