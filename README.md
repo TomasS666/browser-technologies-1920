@@ -149,10 +149,14 @@ I fixed it with the solution found below. I apply a display: block to the main e
 https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
 ## Browsers and devices
+
 ### Tested browsers
 ## Chrome
+
 ## Edge
+
 ## Firefox
+
 ## IE11-9
 
 ### IE5
@@ -165,10 +169,20 @@ On IE9 the functionality works so far that it should enable the user to make the
 
 ### IE11
 
-### Features
+### Safari
+On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width. Yet on some viewports 
 
+## Devices
 ## Iphone 5
 ## Huawei P20 Mate lite
+
+
+## Audit scores 
+
+### Contrast
+
+### Meta description 
+Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
 
 ## Credits / references
 Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
