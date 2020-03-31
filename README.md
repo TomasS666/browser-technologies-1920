@@ -1,6 +1,44 @@
 # Browser Technologies @cmda-minor-web 1920
 ![project banner](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/BT-shirt-poster.png)
 
+
+## Table of contents 
+* [Link to demo](#link-to-demo)
+  * [Questions for feedback (NL)](#user-content-questions-for-feedback-nl)
+  * [Link naar Wiki](#link-naar-wiki)
+  * [Link naar Dem](#link-naar-dem)
+  * [Case / Concept](#case---concept)
+    + [First wireflow V1](#first-wireflow-v1)
+  * [How to install](#how-to-install)
+  * [Core features](#core-features)
+  * [Wishlist](#wishlist)
+  * [Known bugs](#known-bugs)
+  * [Process](#process)
+    + [Feature detection](#feature-detection)
+    + [Direct manipulation enhancement](#direct-manipulation-enhancement)
+    + [LocalStorage as enhancement](#localstorage-as-enhancement)
+    + [Multiform as enhancement](#multiform-as-enhancement)
+      - [However challenges arose](#however-challenges-arose)
+    + [SVG](#svg)
+    + [Figure & Figcation do the job](#figure---figcation-do-the-job)
+      - [Word-break: break-all](#word-break--break-all)
+      - [Max width not working? Oh no, it's the main element](#max-width-not-working--oh-no--it-s-the-main-element)
+  * [Browsers and devices](#browsers-and-devices)
+    + [Tested browsers](#tested-browsers)
+  * [Chrome](#chrome)
+  * [Edge](#edge)
+  * [Firefox](#firefox)
+  * [IE11-9](#ie11-9)
+    + [IE5](#ie5)
+    + [IE9](#ie9)
+    + [IE10](#ie10)
+    + [IE11](#ie11)
+    + [Features](#features)
+  * [Iphone 5](#iphone-5)
+  * [Huawei P20 Mate lite](#huawei-p20-mate-lite)
+  * [Credits / references](#credits---references)
+  * [License](#license)
+
 ## Link to demo
 https://bt-tomas.herokuapp.com/
 
@@ -54,18 +92,20 @@ or you can download the zip file or something similar by clicking on the green b
 * Print button for convenience ( **gonna add that with feature detection of the JS window.print() method ** )
 
 ## Known bugs
-* Missing navigation
-* Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
-Gonna remove that.
+* ~Missing navigation~
+* ~Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
+Gonna remove that.~
+* When JS is enabled and you want to go on in the first step without selecting anything, the verification warning isn't showing because the button has a different formaction. When you do fill in something the button gets enabled with a jumpy animation and a different color. Another problem is that color-blind people who suffer from Monochromacy / Achromatopsia, who see no color at all but only light intensity don't have the same experience. Can fix that by adding the buttons when you filled in the form, so the user can focus on the form itself first. But it's debatable if that's a better UX since it's less discoverable. But I haven't fixed that yet.
 
 ## Process 
 
 ### Feature detection
 
 ### Direct manipulation enhancement
-I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to 
+I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to break text lines in SVG without a lot of additional logic. So at some point the cost of SVG was higher if we're talking about accesability. Later in this readme a bit more indept about challenges I encountered with SVG.
 
 ### LocalStorage as enhancement
+I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement
 
 ### Multiform as enhancement
 Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage.
@@ -108,7 +148,27 @@ The main element is not supported everywhere or has partial support. That's why 
 I fixed it with the solution found below. I apply a display: block to the main element so it does take applied max-width rule.
 https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
-## License
+## Browsers and devices
+### Tested browsers
+## Chrome
+## Edge
+## Firefox
+## IE11-9
+
+### IE5
+On IE5 it works, in theory. It doesn't show a live preview and on the end result the text is misplaced. I tried to write text on an image server sided. With the help of a package named JIMP. More about that over ![#]
+
+### IE9
+On IE9 the functionality works so far that it should enable the user to make the shirt, although the live preview doesn't work due to .addEventListener
+
+### IE10 
+
+### IE11
+
+### Features
+
+## Iphone 5
+## Huawei P20 Mate lite
 
 ## Credits / references
 Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
@@ -118,6 +178,6 @@ Menno for the great feedback and help in between!
 For using different shirt color images:
 https://www.wordans.nl/
 
-
+## License
 [MIT License Copyright (c) 2020 Tomas S](https://github.com/TomasS666/browser-technologies-1920/blob/master/LICENSE)
 
