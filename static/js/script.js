@@ -207,7 +207,7 @@ if (isPage("/result?")) {
         shareButton.appendChild(textNode)
 
         // On click, share page
-        shareButton("click", function (e) {
+        shareButton.addEventListener("click", function (e) {
             const title = window.document.title;
             const url = window.document.location.href;
 
