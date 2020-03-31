@@ -116,7 +116,28 @@ Mainly on mobile devices there's a thing called ```javascript navigator .share()
 But this one really needs feature detection, otherwise you end up by appending a button to the DOM of a device which doesn't support this functionality at all.
 
 ### Print button
+As enhancement I wanted to make it the user easier to print instead of going to "File > print". That's why I feature detected the window.print method. If it is enabled, I create element and text nodes (the button), add an eventListener to it which on clicks triggers the print method on the window. But then I had to append it to the DOM. And where I initially thought insertAdjacentElement and insertAdjacentHTML were newer to the game, it didn't mean it had bad support. No, instead appending it by using "append()" had several browser issues. For instance I got errors in IE because it couldn't understand ```.append()```. That's nice, because with insertAdjacentHTML and insertAdjacentElement you have more direct out of the box control of where you want to place the node depending on the node you're targeting. Also nice because now I could add an eventlistener before appending it. Instead of retrieving it out of the DOM and then applying it.
+```
+  if (window.print) {
+        // If so, create button element.
+        // This instead of insertAdjecentHTML so I can add eventlistener before appending it 
+        // And don't have to retrieve it out of the DOM again
 
+        var printbtn = document.createElement("button")
+        var textNode = document.createTextNode("Print")
+
+        printbtn.appendChild(textNode)
+        printbtn.className = "active"
+
+        // On click, print page
+        printbtn.addEventListener("click", function (e) {
+            window.print()
+        })
+
+        // Wide browser support, but win for me because I can easily compose where I want
+        document.body.insertAdjacentElement('beforeend', printbtn)
+
+```
 
 #### However challenges arose
 A big design decision early on, was the bottleneck in my written code later on. I used to fieldsets to seperate the steps with their fields accordingly. To go through it step by step. Out of an HCI principle. But I overly distributed the steps, when I found out it isn't handy at all. Because why choose a font for your shirt later on or before you see the shirt? That's quite stupid. 
