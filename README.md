@@ -4,7 +4,7 @@
 
 ## Table of contents 
 * [Link to demo](#link-to-demo)
-  * [Questions for feedback (NL)](#questions-for-feedback--nl-)
+  * [Questions for feedback (NL)](#user-content-questions-for-feedback-nl)
   * [Link naar Wiki](#link-naar-wiki)
   * [Link naar Dem](#link-naar-dem)
   * [Case / Concept](#case---concept)
