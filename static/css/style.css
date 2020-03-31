@@ -76,7 +76,7 @@ button:disabled{
 
 fieldset[name^="field-"] fieldset:valid ~ fieldset button,
 .active{
-    background-color: #27a6ff;
+    background-color: #000;
     /* border-bottom: 2px solid red; */
     color: #fff;
     border: none;
