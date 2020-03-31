@@ -208,6 +208,7 @@ text{
 
 figure{
     position: relative;
+    display: inline-block;
 }
 
 img{
