@@ -105,10 +105,18 @@ Gonna remove that.~
 I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to break text lines in SVG without a lot of additional logic. So at some point the cost of SVG was higher if we're talking about accesability. Later in this readme a bit more indept about challenges I encountered with SVG.
 
 ### LocalStorage as enhancement
-I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement
+I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement, but it time was ticking and I had a lot of improvements to fix elsewhere.
 
 ### Multiform as enhancement
-Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage.
+Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage. At this point, as pointed out above, localStorage is non-functioning. I refactored my code and localStorage doesn't fit in the time I have left. It works without though.
+
+### Share button as enhancement
+Mainly on mobile devices there's a thing called ```javascript navigator .share()``` which gets supported on newer devices. It enabled the user to share content / a page, by their mobile native share functionallity. What's nice here is that the native share functionality UI is user centric. The mediums to share on are based on the users preferences or recently used applications. 
+
+But this one really needs feature detection, otherwise you end up by appending a button to the DOM of a device which doesn't support this functionality at all.
+
+### Print button
+
 
 #### However challenges arose
 A big design decision early on, was the bottleneck in my written code later on. I used to fieldsets to seperate the steps with their fields accordingly. To go through it step by step. Out of an HCI principle. But I overly distributed the steps, when I found out it isn't handy at all. Because why choose a font for your shirt later on or before you see the shirt? That's quite stupid. 
@@ -149,10 +157,14 @@ I fixed it with the solution found below. I apply a display: block to the main e
 https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
 ## Browsers and devices
+
 ### Tested browsers
 ## Chrome
+
 ## Edge
+
 ## Firefox
+
 ## IE11-9
 
 ### IE5
@@ -165,10 +177,56 @@ On IE9 the functionality works so far that it should enable the user to make the
 
 ### IE11
 
-### Features
+### Safari
+On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width, like so:
 
+![layout breaking](images/usable%20layer/without-flex-so-inline-block.png)
+
+
+That's why I changed ```display: block``` to ```display: inline-block;``` because it's supported more widely than flex box. And it wasn't a complex layout either, so this was the way to go. And now it looked like this:
+
+![layout good](images/usable%20layer/inline-block.png)
+
+
+
+## Devices
 ## Iphone 5
 ## Huawei P20 Mate lite
+
+
+## Can you control the site with keyboard-only?
+Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there. So I tried ```css visibility: hidden``` but that didn't have the desired result either. In the end Ramon told me I could give the input a width of zero. This works like a charm. I implemented it that way and applied styling on the label of the checkbox is focussed. I also added style to the surrounding fieldset with focus-within. That's supported everywhere though. So it can be seen as an enhancement.
+
+
+```css
+fieldset fieldset:focus-within{
+    border: orange solid 4px;
+    border: orange solid .25rem;
+}
+
+input[type="radio"]:checked + label,
+input[type="radio"]:focus + label{
+    border: orange solid 4px;
+    border: orange solid .25rem;
+}
+```
+
+
+## Without Javascript?
+Without Javascript the whole form is visible. So everything works. What I could have done nicer is actually appending the button "go to next step". Because now it's in the DOM anyway. The result is that only on the last submit it checks on the client if the fields are valid. But it's okay because the formaction of the button goes to the next fieldset when JS is disabled.
+
+![without js](images/usable%20layer/usable-layer-without-javascript.png)
+
+## Colors
+Yes, I could have gone wilder with colors. Unfortunately my audit reports that my contrast ratio is not good enough. I could have added a "higher contrast" button to switch. I'd do that in a future version. For now I used a lot of high contrast and not too many great colors.
+
+
+## Audit scores 
+
+### Contrast
+
+### Meta description 
+Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
 
 ## Credits / references
 Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
