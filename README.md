@@ -1,6 +1,10 @@
 # Browser Technologies @cmda-minor-web 1920
 ![project banner](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/BT-shirt-poster.png)
 
+
+## Table of contents 
+* [Link to demo](#link-to-demo)
+
 ## Link to demo
 https://bt-tomas.herokuapp.com/
 
@@ -116,6 +120,17 @@ https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 ## Edge
 ## Firefox
 ## IE11-9
+
+### IE5
+On IE5 it works, in theory. It doesn't show a live preview and on the end result the text is misplaced. I tried to write text on an image server sided. With the help of a package named JIMP. More about that over ![#]
+
+### IE9
+On IE9 the functionality works so far that it should enable the user to make the shirt, although the live preview doesn't work due to .addEventListener
+
+### IE10 
+
+### IE11
+
 ### Features
 
 ## Iphone 5
