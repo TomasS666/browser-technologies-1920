@@ -113,7 +113,12 @@ Splitted the form up in steps with each step in it's own fieldset. I wrote my ow
 ### Share button as enhancement
 Mainly on mobile devices there's a thing called ```javascript navigator .share()``` which gets supported on newer devices. It enabled the user to share content / a page, by their mobile native share functionallity. What's nice here is that the native share functionality UI is user centric. The mediums to share on are based on the users preferences or recently used applications. 
 
+This is the current support, but don't get scared. It's a mobile thing anyway and an enhancement.
+
+![b support navigator.share](images/usable%20layer/navigator-share-support-so-feature-detect.png)
+
 But this one really needs feature detection, otherwise you end up by appending a button to the DOM of a device which doesn't support this functionality at all.
+
 
 ### Print button
 As enhancement I wanted to make it the user easier to print instead of going to "File > print". That's why I feature detected the window.print method. If it is enabled, I create element and text nodes (the button), add an eventListener to it which on clicks triggers the print method on the window. But then I had to append it to the DOM. And where I initially thought insertAdjacentElement and insertAdjacentHTML were newer to the game, it didn't mean it had bad support. No, instead appending it by using "append()" had several browser issues. For instance I got errors in IE because it couldn't understand ```.append()```. That's nice, because with insertAdjacentHTML and insertAdjacentElement you have more direct out of the box control of where you want to place the node depending on the node you're targeting. Also nice because now I could add an eventlistener before appending it. Instead of retrieving it out of the DOM and then applying it.
@@ -171,7 +176,10 @@ My SVG first looked like this:
  Therefore I went back to an image, a figcation as overlaw and serveral image sources to switch between colors.
  
 ### Figure & Figcation do the job
+
 #### Word-break: break-all 
+I had an issue with text on the shirt. What if the user would type a very long word? It would have been displayed outside the shirt. That's not cool. Fortunately I found out that CSS could fix this. So I applied ```word-break: break-all```. This breaks the text and pushes it to the next line when it's reaching the border of the container.
+
 #### Max width not working? Oh no, it's the main element
 The main element is not supported everywhere or has partial support. That's why the max-width rule didn't apply on the main element in IE 11. It's not seen as a block element.
 I fixed it with the solution found below. I apply a display: block to the main element so it does take applied max-width rule.
@@ -238,13 +246,19 @@ Without Javascript the whole form is visible. So everything works. What I could 
 
 ![without js](images/usable%20layer/usable-layer-without-javascript.png)
 
-## Colors
+## Colors / contrast
 Yes, I could have gone wilder with colors. Unfortunately my audit reports that my contrast ratio is not good enough. I could have added a "higher contrast" button to switch. I'd do that in a future version. For now I used a lot of high contrast and not too many great colors.
+
+The Lighthouse audit with a fancy blue button: 
+![audit contrast](images/usable%20layer/not-suff-contrast-btn.png)
+![button with blue](images/usable%20layer/save-button-before.png)
+The Lighthouse audit with a high black-white contrast:
+
+![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
 
 
 ## Audit scores 
 
-### Contrast
 
 ### Meta description 
 Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
