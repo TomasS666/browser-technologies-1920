@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path')
-
+const querystring = require('querystring');
 var url = require('url');
 
 
@@ -16,7 +16,8 @@ router.get('/save', (req, res) => {
         query: req.query,
         step: req.params.step ? req.params.step : "1",
         url: url_parts.search,
-        baseurl: req.protocol + '://' + req.get('host')
+        baseurl: req.protocol + '://' + req.get('host'),
+        originalUrl: querystring.encode(req.query)
     })
 })
 

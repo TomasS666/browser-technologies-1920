@@ -4,7 +4,7 @@
     <%- include('components/header.ejs') %>
     <main id="content">
         <section>
-            Overview of your custom shirt:
+            <h1>Overview of your custom shirt:</h1>
             <table>
                 <tbody>
                 <tr>
@@ -41,7 +41,7 @@
             </form> -->
 
             <% if(typeof url != 'undefined'){ %>
-                <button data-btn="save">Save this link</button><input type="text" name="save-link" title="link to your custom shirt" value="<%= url %>"></p>
+                <button class="active" data-btn="save">Save this link</button><input type="text" name="save-link" title="link to your custom shirt" value="<%= url %>"></p>
             <% }else{ %>
                 <p>Sorry, something went wrong</p>
             <% } %>

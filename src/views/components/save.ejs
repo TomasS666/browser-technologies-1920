@@ -3,12 +3,12 @@
 
 
 <% if(typeof url != 'undefined'){ %>
-    <p>Save this link: <a href="<%= baseurl + "/design-shirt/" + url %>">Your shirt!</a></p>
+    <button class="active" data-btn="save">Save this link</button><input type="text" name="save-link" title="link to your custom shirt" value="<%= url %>"></p>
 <% }else{ %>
     <p>Sorry, something went wrong</p>
 <% } %>
 
-<a href="<%= baseurl + "/design-shirt/?result" + url %>">Your shirt!</a>
+<a href="<%= baseurl + "/design-shirt/?" + originalUrl%>">Your shirt!</a>
     Or go on with your shirt now
 </a>
 

@@ -116,6 +116,7 @@ if (isPage("/save?") || isPage("/result?")) {
         var textNode = document.createTextNode("Print")
 
         printbtn.appendChild(textNode)
+        printbtn.className = "active"
 
         // On click, print page
         printbtn.addEventListener("click", function (e) {
@@ -189,6 +190,7 @@ if (!isPage("/result?") && !isPage("/save?")) {
 
 // If native share is enabled
 if (isPage("/result?")) {
+    console.log("test")
     if (navigator.share) {
 
         // const btn = document.querySelector('button.share');
@@ -202,7 +204,7 @@ if (isPage("/result?")) {
 
         shareButton.appendChild(textNode)
 
-        // On click, print page
+        // On click, share page
         shareButton("click", function (e) {
             const title = window.document.title;
             const url = window.document.location.href;

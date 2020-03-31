@@ -67,13 +67,19 @@ button:disabled{
     cursor: not-allowed;
 }
 
-fieldset[name^="field-"] fieldset:valid ~ fieldset button{
+fieldset[name^="field-"] fieldset:valid ~ fieldset button,
+.active{
     background-color: #27a6ff;
     /* border-bottom: 2px solid red; */
     color: #fff;
     border: none;
     box-shadow: 0.125rem 0.125rem 0.125rem 0.066rem #848484;
     transition: background-color .5s;
+}
+
+.active{
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 
@@ -131,6 +137,9 @@ input[name="shirtText"]{
     width: 20rem;
     border-radius: .25rem;
     border: grey solid .125rem;
+}
+
+input[type="text"]{
     padding: 1rem;
 }
 
@@ -242,11 +251,19 @@ fieldset[data-step="3"]{
     resize: none;
 } */
 
+th{
+    background-color: #585858;
+    color: #fff;    
+}
 
-table,
 td, th {
-    border: 1px solid #333;
-    padding: 1rem;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+tr:nth-child(even) {
+background-color: #dddddd;
 }
 
 table{
@@ -344,10 +361,28 @@ textarea{
     }
     
     .edit-controls{
+        width: unset;
         margin: auto;
     }
 
     main, #content{
         max-width: unset;
+        padding: .5rem;
+    }
+
+    button, .active{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        color: #2f2f2f;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+
+    input[type="text"]{
+        width: 100%;
     }
 }
