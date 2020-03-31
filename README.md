@@ -246,13 +246,19 @@ Without Javascript the whole form is visible. So everything works. What I could 
 
 ![without js](images/usable%20layer/usable-layer-without-javascript.png)
 
-## Colors
+## Colors / contrast
 Yes, I could have gone wilder with colors. Unfortunately my audit reports that my contrast ratio is not good enough. I could have added a "higher contrast" button to switch. I'd do that in a future version. For now I used a lot of high contrast and not too many great colors.
+
+The Lighthouse audit with a fancy blue button: 
+![audit contrast](images/usable%20layer/not-suff-contrast-btn.png)
+![button with blue](images/usable%20layer/save-button-before.png)
+The Lighthouse audit with a high black-white contrast:
+
+![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
 
 
 ## Audit scores 
 
-### Contrast
 
 ### Meta description 
 Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
