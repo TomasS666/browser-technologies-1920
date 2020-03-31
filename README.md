@@ -55,10 +55,10 @@ background-color: blue;
 
 3. Ik heb nu delen in mijn Readme en delen in mijn Wiki staan. Ik wil eigenlijk het meer algemene plaatje van mijn eindproduct in mijn readme zetten en het diepere onderzoek op features, de verschillende lagen etc. in mijn wiki documenteren. **Is dat oké of hoe zien jullie dit graag?**
 
-## Link naar Wiki
+## Link to Wiki
 [https://github.com/TomasS666/browser-technologies-1920/wiki](https://github.com/TomasS666/browser-technologies-1920/wiki)
 
-## Link naar Dem
+## Link to demo
 
 ## Case / Concept
 **_The power of the Web is in its universality. Acces by everyone ~regardless of disability~ is an essential aspect._**
@@ -189,18 +189,16 @@ https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
 ### Tested browsers
 ## Chrome
-
-## Edge
+Chrome works like expected. I developed the most here in the first place, so it works here solid. Besides the bugs that I haven't figured out myself yet of course.
 
 ## Firefox
-
+Firefox works pretty solid. No problems.
 ## IE11-9
-
 ### IE5
 On IE5 it works, in theory. It doesn't show a live preview and on the end result the text is misplaced. I tried to write text on an image server sided. With the help of a package named JIMP. More about that over ![#]
 
 ### IE9
-On IE9 the functionality works so far that it should enable the user to make the shirt, although the live preview doesn't work due to .addEventListener
+On IE9 the functionality works so far that it should enable the user to make the shirt Only the formaction doesn't seem to work. So when the user would click on the "Go to next step" it would actually submit the form already. That's not very nice. There was a fix, but clashes with something else I wrote.
 
 ### IE10 
 In IE10 the dataset didn't work. When you apply data- attributes on your markup, for instance: (data-step=0), you can acces them by the following notation: ```Node.dataset.step```. This broke in IE10 though, so I'm getting the attribute the oldschool way by retrieving the value by getAttribute("data-step").
@@ -221,15 +219,12 @@ That's why I changed ```display: block``` to ```display: inline-block;``` becaus
 #### Navigating
 Also tabbing through content was an issue. But I found out it is a Safari and Firefox thing. The user needs to enable navigating with tab in the browser settings. Then it works.
 
-
-
 ## Devices
 ## Iphone 5
 On an older iPhone, it works like expected. Layout is a bit broken and some CSS is not applied. It's a very old version of Safari. But it works though. Only the preview of the shirt doesn't really work. But once you go to the end result it shows up again. Yes, could be better, but the user is still able to go through the steps.
 
 ## Huawei P20 Mate lite
 Om my Huawei it works like a charm. Nothing is really going on besides some alignment which I had to fix anyway, but did not due time.
-
 
 ## Can you control the site with keyboard-only?
 Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there. So I tried ```css visibility: hidden``` but that didn't have the desired result either. In the end Ramon told me I could give the input a width of zero. This works like a charm. I implemented it that way and applied styling on the label of the checkbox is focussed. I also added style to the surrounding fieldset with focus-within. That's supported everywhere though. So it can be seen as an enhancement.
