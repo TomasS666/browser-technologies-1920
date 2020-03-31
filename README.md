@@ -198,6 +198,8 @@ input[type="radio"]:focus + label{
 ## Without Javascript?
 Without Javascript the whole form is visible. So everything works. What I could have done nicer is actually appending the button "go to next step". Because now it's in the DOM anyway. The result is that only on the last submit it checks on the client if the fields are valid. But it's okay because the formaction of the button goes to the next fieldset when JS is disabled.
 
+![without js](images/usable%20layer/usable-layer-without-javascript.png)
+
 ## Colors
 Yes, I could have gone wilder with colors. Unfortunately my audit reports that my contrast ratio is not good enough. I could have added a "higher contrast" button to switch. I'd do that in a future version. For now I used a lot of high contrast and not too many great colors.
 
