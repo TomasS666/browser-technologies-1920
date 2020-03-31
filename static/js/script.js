@@ -151,6 +151,7 @@ if (!isPage("/result?") && !isPage("/save?")) {
     if(isChecked){
         var filled = true;
         btnStep1.disabled = false;
+        btnStep1.classList.add("active")
     }
 
     console.log(isChecked)
@@ -162,6 +163,7 @@ if (!isPage("/result?") && !isPage("/save?")) {
             // shirt.removeAttribute("class")
             console.log(target.value)
             btnStep1.disabled = false;
+            btnStep1.classList.add("active")
             filled = true;
         }
     })

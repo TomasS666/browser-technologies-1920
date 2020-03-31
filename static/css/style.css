@@ -80,8 +80,12 @@ fieldset[name^="field-"] fieldset:valid ~ fieldset button,
 .active{
     padding: 1rem;
     border-radius: 1rem;
+    animation: jump .5s;
 }
 
+.btn-group{
+    border:none;
+}
 
 
 
@@ -247,10 +251,6 @@ fieldset[data-step="3"]{
     text-align: center;
 }
 
-/* fieldset[data-step="3"] textarea{
-    resize: none;
-} */
-
 th{
     background-color: #585858;
     color: #fff;    
@@ -343,6 +343,21 @@ textarea{
     Like a button, a button is useless in print...
 
 */
+
+
+@keyframes jump{
+    0%{
+        transform: translate(0, 0);
+    }
+
+    50%{
+        transform: translate(0, -1rem);
+    }
+
+    100%{
+        transform: translate(0, 0);
+    }
+}
 
 @media print{
     header, button{
