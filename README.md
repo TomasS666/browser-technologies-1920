@@ -203,8 +203,10 @@ On IE5 it works, in theory. It doesn't show a live preview and on the end result
 On IE9 the functionality works so far that it should enable the user to make the shirt, although the live preview doesn't work due to .addEventListener
 
 ### IE10 
+In IE10 the dataset didn't work. When you apply data- attributes on your markup, for instance: (data-step=0), you can acces them by the following notation: ```Node.dataset.step```. This broke in IE10 though, so I'm getting the attribute the oldschool way by retrieving the value by getAttribute("data-step").
 
 ### IE11
+In IE11 the ```Array.from()``` doesn't work on a nodelist. This is very unfortunate because it doesn't give a active state to the button when you select a thing in the form. Now I fixed it with feature detection. But it's bad for the UX because right now the user might miss the first step and when they're further in the progress the feedback of that one step not filled in is shown. I considered many options, but this is my quick fix for now. Disabling it anyway doesn't really seem to work. I searched for workarounds but I really have a deeper underlaying problem here. So, yes it works, besides that part.
 
 ### Safari
 On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width, like so:
@@ -216,11 +218,17 @@ That's why I changed ```display: block``` to ```display: inline-block;``` becaus
 
 ![layout good](images/usable%20layer/inline-block.png)
 
+#### Navigating
+Also tabbing through content was an issue. But I found out it is a Safari and Firefox thing. The user needs to enable navigating with tab in the browser settings. Then it works.
+
 
 
 ## Devices
 ## Iphone 5
+On an older iPhone, it works like expected. Layout is a bit broken and some CSS is not applied. It's a very old version of Safari. But it works though. Only the preview of the shirt doesn't really work. But once you go to the end result it shows up again. Yes, could be better, but the user is still able to go through the steps.
+
 ## Huawei P20 Mate lite
+Om my Huawei it works like a charm. Nothing is really going on besides some alignment which I had to fix anyway, but did not due time.
 
 
 ## Can you control the site with keyboard-only?
