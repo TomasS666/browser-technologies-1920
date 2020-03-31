@@ -134,7 +134,7 @@ label:checked{
 
 [name="shirtColor"] input[type="radio"],
 [name="textColor"] input[type="radio"]{
-    display: none;
+    width: 0;
 }
 
 [name="shirtColor"] input[type="radio"] + label,
@@ -166,6 +166,15 @@ input[type="text"]{
 }
 
 input[type="radio"]:checked + label{
+    border: orange solid 4px;
+    border: orange solid .25rem;
+}
+
+fieldset fieldset:focus-within{
+    border: orange solid 4px;
+}
+
+input[type="radio"]:focus + label{
     border: orange solid 4px;
     border: orange solid .25rem;
 }
