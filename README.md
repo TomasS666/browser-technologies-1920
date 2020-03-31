@@ -105,10 +105,18 @@ Gonna remove that.~
 I liked the idea of implementing an shirt as SVG to wrap the input of the user directly on the svg. Especially because SVG has a better browser support than I initially thought. But it's harder than I thought. Because it's pretty challenging to break text lines in SVG without a lot of additional logic. So at some point the cost of SVG was higher if we're talking about accesability. Later in this readme a bit more indept about challenges I encountered with SVG.
 
 ### LocalStorage as enhancement
-I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement
+I wanted to implement localstorage. And I did, until I figured my whole UI wasn't right. And my code was not generic enough to reuse it easily in my new form setup. It's a shame because I really wanted to use it as an enhancement, but it time was ticking and I had a lot of improvements to fix elsewhere.
 
 ### Multiform as enhancement
-Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage.
+Splitted the form up in steps with each step in it's own fieldset. I wrote my own script which preventDefaults the button actions when certain features are enabled in the browser. This way I prevent the formaction from submitting, so I can go through the form step by step and save the data in the localStorage. At this point, as pointed out above, localStorage is non-functioning. I refactored my code and localStorage doesn't fit in the time I have left. It works without though.
+
+### Share button as enhancement
+Mainly on mobile devices there's a thing called ```javascript navigator .share()``` which gets supported on newer devices. It enabled the user to share content / a page, by their mobile native share functionallity. What's nice here is that the native share functionality UI is user centric. The mediums to share on are based on the users preferences or recently used applications. 
+
+But this one really needs feature detection, otherwise you end up by appending a button to the DOM of a device which doesn't support this functionality at all.
+
+### Print button
+
 
 #### However challenges arose
 A big design decision early on, was the bottleneck in my written code later on. I used to fieldsets to seperate the steps with their fields accordingly. To go through it step by step. Out of an HCI principle. But I overly distributed the steps, when I found out it isn't handy at all. Because why choose a font for your shirt later on or before you see the shirt? That's quite stupid. 
