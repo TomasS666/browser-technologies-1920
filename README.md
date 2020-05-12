@@ -104,26 +104,33 @@ Gonna remove that.~
 #### Definition in this context
 Functional means that the core, the essence of what you want to enable for users to reach their goal, works, everywhere. It doesn't have to be nice, fancy, it doesn't have to have flying elephants, shiny animations, paralax scrolling, etc. No, every design has a many purposes, but underneath their most of the times it comes down to one primary goal, consisting of more, but with one sole purpose. 
 
-#### My approach
+#### My proces
 That purpose here is to be able to design your own shirt with text and color. What do you need to get there? 
 
-I want the user to be able to at least change the color of the shirt, the color and size of the text on the shirt and maybe change the font. But how do I reflect these changes to the user in a manner that it works worldwide, even on the oldest phone? Javascript comes to mind when I want to reflect changes in a live preview kinda way. Of course you can use CSS hacks, SVG maybe up to some point, but I found out it's hard to scale up to the next layers if you fill your websites with CSS hack on top of another 3 CSS hacks. You keep patching and at some point it's your bottleneck. It starts to look like graceful degredation, but them from the bottom up to the modern browsers. Let me explain it like this, graceful degradation is the idealogy of giving a UX with great potential on the newest hardware and software, and then making it work on less high-end devices.
+I want the user to be able to at least change the color of the shirt, the color and size of the text on the shirt and maybe change the font. But how do I reflect these changes to the user in a manner that it works worldwide, even on the oldest phone? Javascript comes to mind when I want to reflect changes in a live preview kinda way. Of course you can use CSS hacks, SVG maybe up to some point, but I found out it's hard to scale up to the next layers if you fill your websites with CSS hack on top of another 3 CSS hacks. You keep patching and at some point it's your bottleneck. It starts to look like graceful degredation, but them from the bottom up to the modern browsers. Let me explain it like this, graceful degradation is the idealogy of giving a UX with great potential on the newest hardware and software (starting from there), and then making it work on less high-end devices, with maybe less of a great UX, but with a working core. The way I see it now within my project, from the start, is that I tried a lot of different experiments to be able to still deliver the same experience to everyone. But somewhere you have to draw the line. Because this caused me to start out with some sketchy CSS or even HTML tricks, which are fine on this layer, it works, but cause trouble when you climb up the tree to support better hardware and software. 
+
+My approu
 
 #### Reflection and what I would've done next time
+And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. 
 
 ### Usable
 #### Definition in this context
 
-#### My approach
+#### My proces
 
 #### Reflection and what I would've done next time
 
 ### Pleasureable 
 #### Definition in this context
 
-#### My approach
+#### My proces
 
 #### Reflection and what I would've done next time
+
+
+
+
 
 ## Process 
 
