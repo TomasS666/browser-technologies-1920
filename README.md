@@ -102,9 +102,12 @@ Gonna remove that.~
 
 ### Functional 
 #### Definition in this context
-Functional means that the core, the essence of what you want to enable for users to reach their goal, works. It doesn't have to be nice, fancy, it doesn't have to have flying elephants, shiny animations, paralax scrolling, 
+Functional means that the core, the essence of what you want to enable for users to reach their goal, works, everywhere. It doesn't have to be nice, fancy, it doesn't have to have flying elephants, shiny animations, paralax scrolling, etc. No, every design has a many purposes, but underneath their most of the times it comes down to one primary goal, consisting of more, but with one sole purpose. 
 
 #### My approach
+That purpose here is to be able to design your own shirt with text and color. What do you need to get there? 
+
+I want the user to be able to at least change the color of the shirt, the color and size of the text on the shirt and maybe change the font. But how do I reflect these changes to the user in a manner that it works worldwide, even on the oldest phone? Javascript comes to mind when I want to reflect changes in a live preview kinda way. Of course you can use CSS hacks, SVG maybe up to some point, but I found out it's hard to scale up to the next layers if you fill your websites with CSS hack on top of another 3 CSS hacks. You keep patching and at some point it's your bottleneck. It starts to look like graceful degredation, but them from the bottom up to the modern browsers. Let me explain it like this, graceful degradation is the idealogy of giving a UX with great potential on the newest hardware and software, and then making it work on less high-end devices.
 
 #### Reflection and what I would've done next time
 
