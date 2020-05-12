@@ -97,6 +97,31 @@ or you can download the zip file or something similar by clicking on the green b
 Gonna remove that.~
 * When JS is enabled and you want to go on in the first step without selecting anything, the verification warning isn't showing because the button has a different formaction. When you do fill in something the button gets enabled with a jumpy animation and a different color. Another problem is that color-blind people who suffer from Monochromacy / Achromatopsia, who see no color at all but only light intensity don't have the same experience. Can fix that by adding the buttons when you filled in the form, so the user can focus on the form itself first. But it's debatable if that's a better UX since it's less discoverable. But I haven't fixed that yet.
 
+
+## Layers
+
+### Functional 
+#### Definition in this context
+Functional means that the core, the essence of what you want to enable for users to reach their goal, works. It doesn't have to be nice, fancy, it doesn't have to have flying elephants, shiny animations, paralax scrolling, 
+
+#### My approach
+
+#### Reflection and what I would've done next time
+
+### Usable
+#### Definition in this context
+
+#### My approach
+
+#### Reflection and what I would've done next time
+
+### Pleasureable 
+#### Definition in this context
+
+#### My approach
+
+#### Reflection and what I would've done next time
+
 ## Process 
 
 ### Feature detection
