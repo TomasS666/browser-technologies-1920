@@ -55,10 +55,10 @@ background-color: blue;
 
 3. Ik heb nu delen in mijn Readme en delen in mijn Wiki staan. Ik wil eigenlijk het meer algemene plaatje van mijn eindproduct in mijn readme zetten en het diepere onderzoek op features, de verschillende lagen etc. in mijn wiki documenteren. **Is dat oké of hoe zien jullie dit graag?**
 
-## Link naar Wiki
+## Link to Wiki
 [https://github.com/TomasS666/browser-technologies-1920/wiki](https://github.com/TomasS666/browser-technologies-1920/wiki)
 
-## Link naar Dem
+## Link to demo
 
 ## Case / Concept
 **_The power of the Web is in its universality. Acces by everyone ~regardless of disability~ is an essential aspect._**
@@ -96,6 +96,56 @@ or you can download the zip file or something similar by clicking on the green b
 * ~Textarea as overlay on shirt is creative, but probably a bad practice since it's kinda hacky positioned.
 Gonna remove that.~
 * When JS is enabled and you want to go on in the first step without selecting anything, the verification warning isn't showing because the button has a different formaction. When you do fill in something the button gets enabled with a jumpy animation and a different color. Another problem is that color-blind people who suffer from Monochromacy / Achromatopsia, who see no color at all but only light intensity don't have the same experience. Can fix that by adding the buttons when you filled in the form, so the user can focus on the form itself first. But it's debatable if that's a better UX since it's less discoverable. But I haven't fixed that yet.
+
+
+## Layers
+
+### Functional 
+#### Definition in this context
+Functional means that the core, the essence of what you want to enable for users to reach their goal, works, everywhere. It doesn't have to be nice, fancy, it doesn't have to have flying elephants, shiny animations, paralax scrolling, etc. No, every design has a many purposes, but underneath their most of the times it comes down to one primary goal, consisting of more, but with one sole purpose. 
+
+#### My proces
+That purpose here is to be able to design your own shirt with text and color. What do you need to get there? 
+
+I want the user to be able to at least change the color of the shirt, the color and size of the text on the shirt and maybe change the font. But how do I reflect these changes to the user in a manner that it works worldwide, even on the oldest phone? Javascript comes to mind when I want to reflect changes in a live preview kinda way. Of course you can use CSS hacks, SVG maybe up to some point, but I found out it's hard to scale up to the next layers if you fill your websites with CSS hack on top of another 3 CSS hacks. You keep patching and at some point it's your bottleneck. It starts to look like graceful degredation, but them from the bottom up to the modern browsers. Let me explain it like this, graceful degradation is the idealogy of giving a UX with great potential on the newest hardware and software (starting from there), and then making it work on less high-end devices, with maybe less of a great UX, but with a working core. The way I see it now within my project, from the start, is that I tried a lot of different experiments to be able to still deliver the same experience to everyone. But somewhere you have to draw the line. Because this caused me to start out with some sketchy CSS or even HTML tricks, which are fine on this layer, it works, but cause trouble when you climb up the tree to support better hardware and software. 
+
+I started out with plain HTML which got served by a NodeJS Express server. I started out with an Express server because I wanted the load of operations involved by the core functionality, to be handled by the server wherever that seemed fitting. In other words, I can't control the thousands of devices and the software. So wherever I fix something on my server first, I have more control, until I serve it to the outside world.
+
+So with plain HTML I tried to make a structure as semantic as possible. So I can use build in functionality / accesibility from browsers that support it. The hardest part was to search for a responsive yet accesible solution for the shirt. I started out with just testing possible solutions after checking the browser support table on MDN and Can I Use.
+
+Then what often happpened was this: I checked in on multiple browsers support tables, I tested a feature on multiple browsers, I tested it sometimes on my phone during the proces and when things went well, I would go along with it. And then you build something else on top of it or next to it, without thinking it could affect the tested features, but then it actually did. Which was pretty hard. As I write later on in the reflection on these layers, is that you can't just add something, test it and then assume it will work perfect with something else that's really good supported. It's all connected, I knew that, but that was still something that really challenged me during this course.
+
+The functional layer consists of a big form with all steps organised within fieldsets.
+It also includes an image of the shirt which I should've removed if I think about it afterwards. Because in the end, assuming that the live preview on the shirt doesn't work everywhere with the use of Javascript and CSS and or SVG for instance, on the same page, why still show a shirt? Why not point out that they can see the shirt on the next page. With even more feature detects I think I could've determined wheter a user his or her hardware and software is within this condition or not. Although that might have become a little messy.
+
+### Usable
+#### Definition in this context
+To enhance the core with a layer of usability. Give information at the right time, have a layout to organize that information better is what I understand when we talk about the usability in this context.
+I got confused sometimes whether something is belongs more to the useable layer or the pleasurable layer. Because something pleasurable can be useful, and something useful can also be pleasurable. So yes, they go along and sometimes they're a little mixed up or complimenting each other. As for the functional layer, I get a more distinct feeling. It's something that has to work. It's more black and white. And everything build on top of that foundation is connected to each other and has more of a grayscale. There's more nuance.
+
+#### My proces
+I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization options up as well in steps. While those options have visible impact on each other. And when you have to go back and forward to fine tune them, you lower the user's ability to perform the task. In other words, it's very annoying. Later on I chopped it up in different way. You're start / overview page. Starting out with a size of the shirt, then the customization and afterwards an overview of the order, option to save and an option to print.
+
+Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid either, but I did this to bring more visual hierarchy into the design. To group custom controls in the left column, each and every control within a fieldset with a border by default. This groups elements that belong to each other. As they should be grouped somehow to bring order into the design and to establish visual hierarchy. You might've noticed that the field to input the text on the shirt is out of that order. I wanted that element to be more important. But afterwards I noticed a little mistake of mine. The inconsistency of the locating that element somewhere else, isn't really an issue, because as I see it, it's out of place so it can draw attention. But I should've given it the same background color as the other options. Because I forgot that, it doesn't look like it belongs to the rest. I think that would've been an improvement.
+
+### Pleasurable 
+#### Definition in this context
+The pleasurable layer consists of adding a little bit of user delight. Making things go a little smoother, make content and information a little more pleasant. Maybe add a little animation to make it more dynamic or smooth.
+
+#### My proces
+I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges.
+
+Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. Which in my vision, wasn't the case. But I can see everything. I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
+
+When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action. That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
+
+Next time I would've done more with the multistep form. But then I need to form to be more reliable for those improvements. Because now it feels a bit hacky, but it works for the biggest part and that was the primary goal first. But as delight and to make it more dynamic, I see the next part of the form flying in and the other fading out, feedback of the steps being more alive, stuff like that. 
+
+
+### Reflection and what I would've done next time
+And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. I think if I would do this again, I would keep in mind that it's never the ideal situation, but if it's near ideal and you did what you can, it's better to move on and focus on further progress.
+
+
 
 ## Process 
 
@@ -189,22 +239,22 @@ https://stackoverflow.com/questions/28794718/max-width-not-working-for-ie-11
 
 ### Tested browsers
 ## Chrome
-
-## Edge
+Chrome works like expected. I developed the most here in the first place, so it works here solid. Besides the bugs that I haven't figured out myself yet of course.
 
 ## Firefox
-
+Firefox works pretty solid. No problems.
 ## IE11-9
-
 ### IE5
 On IE5 it works, in theory. It doesn't show a live preview and on the end result the text is misplaced. I tried to write text on an image server sided. With the help of a package named JIMP. More about that over ![#]
 
 ### IE9
-On IE9 the functionality works so far that it should enable the user to make the shirt, although the live preview doesn't work due to .addEventListener
+On IE9 the functionality works so far that it should enable the user to make the shirt Only the formaction doesn't seem to work. So when the user would click on the "Go to next step" it would actually submit the form already. That's not very nice. There was a fix, but clashes with something else I wrote.
 
 ### IE10 
+In IE10 the dataset didn't work. When you apply data- attributes on your markup, for instance: (data-step=0), you can acces them by the following notation: ```Node.dataset.step```. This broke in IE10 though, so I'm getting the attribute the oldschool way by retrieving the value by getAttribute("data-step").
 
 ### IE11
+In IE11 the ```Array.from()``` doesn't work on a nodelist. This is very unfortunate because it doesn't give a active state to the button when you select a thing in the form. Now I fixed it with feature detection. But it's bad for the UX because right now the user might miss the first step and when they're further in the progress the feedback of that one step not filled in is shown. I considered many options, but this is my quick fix for now. Disabling it anyway doesn't really seem to work. I searched for workarounds but I really have a deeper underlaying problem here. So, yes it works, besides that part.
 
 ### Safari
 On Safari it broke some flexbox things. For instance the figure I'm using. The figure holds the shirt image and the figcaption with the text of the shirt. It should align over the shirt, but the user-agent style of a figcaption is ```display: block``` which spans over the entire width, like so:
@@ -216,12 +266,15 @@ That's why I changed ```display: block``` to ```display: inline-block;``` becaus
 
 ![layout good](images/usable%20layer/inline-block.png)
 
-
+#### Navigating
+Also tabbing through content was an issue. But I found out it is a Safari and Firefox thing. The user needs to enable navigating with tab in the browser settings. Then it works.
 
 ## Devices
 ## Iphone 5
-## Huawei P20 Mate lite
+On an older iPhone, it works like expected. Layout is a bit broken and some CSS is not applied. It's a very old version of Safari. But it works though. Only the preview of the shirt doesn't really work. But once you go to the end result it shows up again. Yes, could be better, but the user is still able to go through the steps.
 
+## Huawei P20 Mate lite
+Om my Huawei it works like a charm. Nothing is really going on besides some alignment which I had to fix anyway, but did not due time.
 
 ## Can you control the site with keyboard-only?
 Yes you can. But with enhancements in place, it was a little challenge to fix some bugs. If you tab through a form, it goes over the fieldsets and then the user can use the arrows to navigate within the fieldset. But what if I hide the inputs and style the labels to be the colors? Which is a hack a lot of people do. But what happens with the form then? Actual application of ```css display: none;``` doesn't work. That was my first try. Because the input isn't there. So I tried ```css visibility: hidden``` but that didn't have the desired result either. In the end Ramon told me I could give the input a width of zero. This works like a charm. I implemented it that way and applied styling on the label of the checkbox is focussed. I also added style to the surrounding fieldset with focus-within. That's supported everywhere though. So it can be seen as an enhancement.
@@ -257,11 +310,18 @@ The Lighthouse audit with a high black-white contrast:
 ![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
 
 
-## Audit scores 
-
-
 ### Meta description 
 Lighthouse is pretty handy because it helps a lot with improving your website. And it points out pretty accurately where you should enhance. At some point my audit report noted my website is missing a meta description. You know, that thing beneath a search result in Google where you describe, for example, what your website does and or what content can be found. Handy anyway, but also good for SEO and screenreaders of course.
+
+
+## Conclusion and last words
+I thought it was a very intense course, although that gave me a big eye-opener and a very educational process. This course learned me all about accesability and inclusive design. Yes a made a multi-step form, great, wasn't very useful in the end and it gave me more trouble than without the use of the form. With every bug fix, there were 99 more bugs. 
+
+I started out with plain HTML, but along the way of adding usebale CSS and enhancements in CSS and JS, the structure changed a lot overall. You don't only add CSS or JS on top of it. Your whole application needs to be restructured to move to that next step, which is pretty hard since a lot of functionallity that we're used to, is simply not avaible in a lot of browsers and devices. This took a lot of time and effort. Yes, then you get a better, more inclusive design, but it also requires a lot of time to test everything everywhere. I think it's mainly assumptions I made that were my bottleneck. For instance I figured out myself the use of ```const``` and ```let``` would break on a lot of browsers since it's ES6 syntax which still has bad support for some browsers. So I used ```var``` instead. But the problem went way deeper. Things like ```addEventListener``` don't work in older versions of IE. 
+
+I also learned to think about wether you can do something server-side. I'm already a fan of doing so, but with this course I got more creativity of handling more simple things on the server. Things that would be overkill in client-side JS.
+
+And last but not least, inclusive design is all about enabling everyone to use your website. Not only taking blind people, people with bad sight into account. No everyone can benefit from a more inclusive design. It goes way beyond that. The web is for everyone, it should look cooler if your hardware can take it, but it should work when hardware is a little less up to date.
 
 ## Credits / references
 Ramon, for mental support and hitting me up with the copy to clipboard tip. He found that out, and I have my own ways of solving things, but this is a very nice sollution for my use case. But it's his idea, so shout out to him.
