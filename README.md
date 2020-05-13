@@ -138,6 +138,15 @@ Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid e
 
 Then the colors of the controls of the text and the shirt are now actual colors. It's useful because visuals are less hard to take in. But why I got the textual label out in the end? That's something that slipped my mind, I think because of aesthetics. While I exclude people who are colorblind now. So that's something that slipped in accidentally. But I'm aware of that.
 
+The focus around those those elements are highlighted extra as well, this is especially visible when you navigate the website by keyboard. This helps to see where you are within the website. I didn't know at first that you can navigate within a focussed fieldset with the arrow keys. So first I experimented with tabindex because I thought tabbing to a step and then tabbing within that step through colors would be the way. But I found out it's not the case. So know you can tab through steps and within those steps you can navigate through values with the arrow keys. And those values / colors / controls are highlighted on focus as well.
+
+![highlighting and live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Usable-pleasurable.gif)
+
+And last but not least, part of the usable layer but to me also to the pleasurable layer is the live preview of the shirt.
+It's useable because it enables the user 
+
+![live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/live-preview.gif)
+
 ### Pleasurable 
 #### Definition in this context
 The pleasurable layer consists of adding a little bit of user delight. Making things go a little smoother, make content and information a little more pleasant. Maybe add a little animation to make it more dynamic or smooth.
