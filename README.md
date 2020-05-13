@@ -124,10 +124,11 @@ It also includes an image of the shirt which I should've removed if I think abou
 
 ### Usable
 #### Definition in this context
-(To enhance the core with a layer of usability. Give information at the right time, have a layout to organize that information better)
+To enhance the core with a layer of usability. Give information at the right time, have a layout to organize that information better is what I understand when we talk about the usability in this context.
+I got confused sometimes whether something is belongs more to the useable layer or the pleasurable layer. Because something pleasurable can be useful, and something useful can also be pleasurable. So yes, they go along and sometimes they're a little mixed up or complimenting each other. As for the functional layer, I get a more distinct feeling. It's something that has to work. It's more black and white. And everything build on top of that foundation is connected to each other and has more of a grayscale. There's more nuance.
 
 #### My proces
-Multistep, because progre
+I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization
 
 
 
