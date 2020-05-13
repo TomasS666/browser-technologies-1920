@@ -121,10 +121,12 @@ I started out with plain HTML which got served by a NodeJS Express server. I sta
 Multistep, because progre
 
 
-### Pleasureable 
+### Pleasurable 
 #### Definition in this context
+The pleasurable layer consists of adding a little bit of user delight. Making things go a little smoother, make content and information a little more pleasant. Maybe add a little animation to make it more dynamic or smooth.
 
 #### My proces
+I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges. 
 
 ### Reflection and what I would've done next time
 And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. 
