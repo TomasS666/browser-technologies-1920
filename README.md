@@ -115,12 +115,8 @@ So with plain HTML I tried to make a structure as semantic as possible. So I can
 
 Then what often happpened was this: I checked in on multiple browsers support tables, I tested a feature on multiple browsers, I tested it sometimes on my phone during the proces and when things went well, I would go along with it. And then you build something else on top of it or next to it, without thinking it could affect the tested features, but then it actually did. Which was pretty hard. As I write later on in the reflection on these layers, is that you can't just add something, test it and then assume it will work perfect with something else that's really good supported. It's all connected, I knew that, but that was still something that really challenged me during this course.
 
-
-
-
 The functional layer consists of a big form with all steps organised within fieldsets.
 It also includes an image of the shirt which I should've removed if I think about it afterwards. Because in the end, assuming that the live preview on the shirt doesn't work everywhere with the use of Javascript and CSS and or SVG for instance, on the same page, why still show a shirt? Why not point out that they can see the shirt on the next page. With even more feature detects I think I could've determined wheter a user his or her hardware and software is within this condition or not. Although that might have become a little messy.
-
 
 ### Usable
 #### Definition in this context
@@ -130,7 +126,7 @@ I got confused sometimes whether something is belongs more to the useable layer 
 #### My proces
 I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization options up as well in steps. While those options have visible impact on each other. And when you have to go back and forward to fine tune them, you lower the user's ability to perform the task. In other words, it's very annoying. Later on I chopped it up in different way. You're start / overview page. Starting out with a size of the shirt, then the customization and afterwards an overview of the order, option to save and an option to print.
 
-Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid either, but I did this to bring more visual hierarchy into the design. To group custom controls in the left column, each and every control within a fieldset with a border by default.
+Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid either, but I did this to bring more visual hierarchy into the design. To group custom controls in the left column, each and every control within a fieldset with a border by default. This groups elements that belong to each other. As they should be grouped somehow to bring order into the design and to establish visual hierarchy. You might've noticed that the field to input the text on the shirt is out of that order. I wanted that element to be more important. But afterwards I noticed a little mistake of mine. The inconsistency of the locating that element somewhere else, isn't really an issue, because as I see it, it's out of place so it can draw attention. But I should've given it the same background color as the other options. Because I forgot that, it doesn't look like it belongs to the rest. I think that would've been an improvement.
 
 ### Pleasurable 
 #### Definition in this context
