@@ -143,7 +143,7 @@ The focus around those those elements are highlighted extra as well, this is esp
 ![highlighting and live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Usable-pleasurable.gif)
 
 And last but not least, part of the usable layer but to me also to the pleasurable layer is the live preview of the shirt.
-It's useable because it enables the user 
+It's useable because it enables the user to see a result right away instead of having to go to a next page. It's mainly useable, yet I don't know, I think personally it's also pleasurable. Seeing your almost direct manipulation on the shirt, brings the shirt more alive. Like it's not a static image, but an actual shirt. And that's pleasurable to me.
 
 ![live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/live-preview.gif)
 
