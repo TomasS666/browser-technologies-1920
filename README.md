@@ -116,6 +116,12 @@ So with plain HTML I tried to make a structure as semantic as possible. So I can
 Then what often happpened was this: I checked in on multiple browsers support tables, I tested a feature on multiple browsers, I tested it sometimes on my phone during the proces and when things went well, I would go along with it. And then you build something else on top of it or next to it, without thinking it could affect the tested features, but then it actually did. Which was pretty hard. As I write later on in the reflection on these layers, is that you can't just add something, test it and then assume it will work perfect with something else that's really good supported. It's all connected, I knew that, but that was still something that really challenged me during this course.
 
 
+
+
+The functional layer consists of a big form with all steps organised within fieldsets.
+It also includes an image of the shirt which I should've removed if I think about it afterwards. Because in the end, assuming that the live preview on the shirt doesn't work everywhere with the use of Javascript and CSS and or SVG for instance, on the same page, why still show a shirt? Why not point out that they can see the shirt on the next page. With even more feature detects I think I could've determined wheter a user his or her hardware and software is within this condition or not. Although that might have become a little messy.
+
+
 ### Usable
 #### Definition in this context
 (To enhance the core with a layer of usability. Give information at the right time, have a layout to organize that information better)
@@ -124,12 +130,22 @@ Then what often happpened was this: I checked in on multiple browsers support ta
 Multistep, because progre
 
 
+
+
 ### Pleasurable 
 #### Definition in this context
 The pleasurable layer consists of adding a little bit of user delight. Making things go a little smoother, make content and information a little more pleasant. Maybe add a little animation to make it more dynamic or smooth.
 
 #### My proces
-I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges. Challenges
+I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges.
+
+Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. Which in my vision, wasn't the case. But I can see everything. I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
+
+When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action.
+
+
+
+That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
 
 ### Reflection and what I would've done next time
 And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. I think if I would do this again, I would keep in mind that it's never the ideal situation, but if it's near ideal and you did what you can, it's better to move on and focus on further progress.
