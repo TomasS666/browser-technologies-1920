@@ -130,8 +130,7 @@ I got confused sometimes whether something is belongs more to the useable layer 
 #### My proces
 I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization options up as well in steps. While those options have visible impact on each other. And when you have to go back and forward to fine tune them, you lower the user's ability to perform the task. In other words, it's very annoying. Later on I chopped it up in different way. You're start / overview page. Starting out with a size of the shirt, then the customization and afterwards an overview of the order, option to save and an option to print.
 
-
-
+Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid either, but I did this to bring more visual hierarchy into the design. To group custom controls in the left column, each and every control within a fieldset with a border by default.
 
 ### Pleasurable 
 #### Definition in this context
@@ -142,11 +141,10 @@ I got a little stuck here sometimes with other layers. Because adding stuff like
 
 Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. Which in my vision, wasn't the case. But I can see everything. I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
 
-When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action.
+When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action. That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
 
+Next time I would've done more with the multistep form. But then I need to form to be more reliable for those improvements. Because now it feels a bit hacky, but it works for the biggest part and that was the primary goal first. But as delight and to make it more dynamic, I see the next part of the form flying in and the other fading out, feedback of the steps being more alive, stuff like that. 
 
-
-That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
 
 ### Reflection and what I would've done next time
 And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. I think if I would do this again, I would keep in mind that it's never the ideal situation, but if it's near ideal and you did what you can, it's better to move on and focus on further progress.
