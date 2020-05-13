@@ -111,6 +111,9 @@ I want the user to be able to at least change the color of the shirt, the color 
 
 I started out with plain HTML which got served by a NodeJS Express server. I started out with an Express server because I wanted the load of operations involved by the core functionality, to be handled by the server wherever that seemed fitting. In other words, I can't control the thousands of devices and the software. So wherever I fix something on my server first, I have more control, until I serve it to the outside world.
 
+So with plain HTML I tried to make a structure as semantic as possible. So I can use build in functionality / accesibility from browsers that support it. The hardest part was to search for a responsive yet accesible solution for the shirt. I started out with just testing possible solutions after checking the browser support table on MDN and Can I Use.
+
+Then what often happpened was this: I checked in on multiple browsers support tables, I tested a feature on multiple browsers, I tested it sometimes on my phone during the proces and when things went well, I would go along with it. And then you build something else on top of it or next to it, without thinking it could affect the tested features, but then it actually did. Which was pretty hard. As I write later on in the reflection on these layers, is that you can't just add something, test it and then assume it will work perfect with something else that's really good supported. It's all connected, I knew that, but that was still something that really challenged me during this course.
 
 
 ### Usable
@@ -126,10 +129,10 @@ Multistep, because progre
 The pleasurable layer consists of adding a little bit of user delight. Making things go a little smoother, make content and information a little more pleasant. Maybe add a little animation to make it more dynamic or smooth.
 
 #### My proces
-I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges. 
+I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges. Challenges
 
 ### Reflection and what I would've done next time
-And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. 
+And if I've learned something, it's that progressive enhancements are not easy. They're not just an easy patch, hack, feature detection. Adding a JS snippet isn't an enhancement persé and is in most cases not sufficient. When you add functionality, you have to reorganise and revision your whole website. When you change something here, it changes something elsewhere. And sometimes it breaks something, and you can't always have it both ways. It's sometimes far from the ideal situation. I think if I would do this again, I would keep in mind that it's never the ideal situation, but if it's near ideal and you did what you can, it's better to move on and focus on further progress.
 
 
 
