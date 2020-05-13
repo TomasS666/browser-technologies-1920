@@ -135,9 +135,16 @@ The pleasurable layer consists of adding a little bit of user delight. Making th
 #### My proces
 I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges.
 
-Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. 
+Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after running a lighthous audit, I found out it doesn't have enough contrast with the white background. As I later described as well, but again here: 
 
-![checkmycolors](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/checkmycolours-PWA.png)
+
+The Lighthouse audit with a fancy blue button: 
+![audit contrast](images/usable%20layer/not-suff-contrast-btn.png)
+![button with blue](images/usable%20layer/save-button-before.png)
+The Lighthouse audit with a high black-white contrast:
+
+![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
+
 
 Which in my vision, wasn't the case. But I can see everything, I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
 
