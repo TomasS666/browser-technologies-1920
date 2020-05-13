@@ -160,6 +160,8 @@ Which in my vision, wasn't the case. But I can see everything, I can't assume ot
 
 When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action. That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
 
+![animation](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/pleasurable-btn.gif)
+
 Next time I would've done more with the multistep form. But then I need to form to be more reliable for those improvements. Because now it feels a bit hacky, but it works for the biggest part and that was the primary goal first. But as delight and to make it more dynamic, I see the next part of the form flying in and the other fading out, feedback of the steps being more alive, stuff like that. 
 
 
