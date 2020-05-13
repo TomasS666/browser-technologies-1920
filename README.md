@@ -135,7 +135,11 @@ The pleasurable layer consists of adding a little bit of user delight. Making th
 #### My proces
 I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges.
 
-Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. Which in my vision, wasn't the case. But I can see everything. I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
+Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. 
+
+![checkmycolors](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/checkmycolours-PWA.png)
+
+Which in my vision, wasn't the case. But I can see everything, I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
 
 When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action. That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
 
