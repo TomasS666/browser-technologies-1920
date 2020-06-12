@@ -157,6 +157,8 @@ if (!isPage("/result?") && !isPage("/save?")) {
         }
 
         console.log(isChecked)
+    }else{
+        btnStep1.classList.add("active")
     }
     sizeField.addEventListener("change", function (event) {
         var target = event.target;
@@ -185,7 +187,7 @@ if (!isPage("/result?") && !isPage("/save?")) {
                 //     multiStepForm(target.dataset.step)
                 // }
 
-                multiStepForm(target.dataset.step)
+                multiStepForm(target.getAttribute("data-step"))
             }
         })
     }
