@@ -56,8 +56,8 @@ app
     
     app.get('/', async (req, res) => {
     
-       const data = await getUserPage('eminem')
-       res.send(data)
+    //    const data = await getUserPage('eminem')
+       res.send('nope')
     })
     
     .listen(port, () => console.log(`B ${port}!`))
