@@ -111,12 +111,20 @@ I want the user to be able to at least change the color of the shirt, the color 
 
 I started out with plain HTML which got served by a NodeJS Express server. I started out with an Express server because I wanted the load of operations involved by the core functionality, to be handled by the server wherever that seemed fitting. In other words, I can't control the thousands of devices and the software. So wherever I fix something on my server first, I have more control, until I serve it to the outside world.
 
+![home page](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Functional/without-css-1.png)
+
 So with plain HTML I tried to make a structure as semantic as possible. So I can use build in functionality / accesibility from browsers that support it. The hardest part was to search for a responsive yet accesible solution for the shirt. I started out with just testing possible solutions after checking the browser support table on MDN and Can I Use.
 
 Then what often happpened was this: I checked in on multiple browsers support tables, I tested a feature on multiple browsers, I tested it sometimes on my phone during the proces and when things went well, I would go along with it. And then you build something else on top of it or next to it, without thinking it could affect the tested features, but then it actually did. Which was pretty hard. As I write later on in the reflection on these layers, is that you can't just add something, test it and then assume it will work perfect with something else that's really good supported. It's all connected, I knew that, but that was still something that really challenged me during this course.
 
 The functional layer consists of a big form with all steps organised within fieldsets.
-It also includes an image of the shirt which I should've removed if I think about it afterwards. Because in the end, assuming that the live preview on the shirt doesn't work everywhere with the use of Javascript and CSS and or SVG for instance, on the same page, why still show a shirt? Why not point out that they can see the shirt on the next page. With even more feature detects I think I could've determined wheter a user his or her hardware and software is within this condition or not. Although that might have become a little messy.
+It also includes an image of the shirt which I should've removed if I think about it afterwards. Because in the end, assuming that the live preview on the shirt doesn't work everywhere with the use of Javascript and CSS and or SVG for instance, on the same page, why still show a shirt? Why not point out that they can see the shirt on the next page. With even more feature detects I think I could've determined whether a user his or her hardware and software is within this condition or not. Although that might have become a little messy.
+
+![long form with everything in it](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Functional/without-css-2.png)
+
+Anyway, the end result with the shirt it's chosen properties and values as displayed after the last step. In the functional layer, it's just being showed and the values are visualy displayed and rendered from the server.
+
+![Functional overview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Functional/result-.png)
 
 ### Usable
 #### Definition in this context
@@ -124,9 +132,20 @@ To enhance the core with a layer of usability. Give information at the right tim
 I got confused sometimes whether something is belongs more to the useable layer or the pleasurable layer. Because something pleasurable can be useful, and something useful can also be pleasurable. So yes, they go along and sometimes they're a little mixed up or complimenting each other. As for the functional layer, I get a more distinct feeling. It's something that has to work. It's more black and white. And everything build on top of that foundation is connected to each other and has more of a grayscale. There's more nuance.
 
 #### My proces
-I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization options up as well in steps. While those options have visible impact on each other. And when you have to go back and forward to fine tune them, you lower the user's ability to perform the task. In other words, it's very annoying. Later on I chopped it up in different way. You're start / overview page. Starting out with a size of the shirt, then the customization and afterwards an overview of the order, option to save and an option to print.
+I wanted to split up the form into multiple steps. To spread the user his or her cognitive load acros tasks rather than letting them remember a lot, or let them think a lot. I just want to give them one primary step at a time. You can do that with progressive disclosure. Not showing everything at once, but dividing disclosing information in a progressive manner. Chopping up big tasks in smaller tasks. So it's easier for the user to consume. The problem at first was that the chunks I chopped, weren't chopped entirely correct. I kinda automatically chopped up the customization options up as well in steps. While those options have visible impact on each other. And when you have to go back and forward to fine tune them, you lower the user's ability to perform the task. In other words, it's very annoying. Later on I chopped it up in different way. You're start / overview page. Starting out with a size of the shirt, then the customization and afterwards an overview of the order, option to save and an option to print.
 
 Also I made use of a grid. Not CSS grid, but a design grid. Not a complex grid either, but I did this to bring more visual hierarchy into the design. To group custom controls in the left column, each and every control within a fieldset with a border by default. This groups elements that belong to each other. As they should be grouped somehow to bring order into the design and to establish visual hierarchy. You might've noticed that the field to input the text on the shirt is out of that order. I wanted that element to be more important. But afterwards I noticed a little mistake of mine. The inconsistency of the locating that element somewhere else, isn't really an issue, because as I see it, it's out of place so it can draw attention. But I should've given it the same background color as the other options. Because I forgot that, it doesn't look like it belongs to the rest. I think that would've been an improvement.
+
+Then the colors of the controls of the text and the shirt are now actual colors. It's useful because visuals are less hard to take in. But why I got the textual label out in the end? That's something that slipped my mind, I think because of aesthetics. While I exclude people who are colorblind now. So that's something that slipped in accidentally. But I'm aware of that.
+
+The focus around those those elements are highlighted extra as well, this is especially visible when you navigate the website by keyboard. This helps to see where you are within the website. I didn't know at first that you can navigate within a focussed fieldset with the arrow keys. So first I experimented with tabindex because I thought tabbing to a step and then tabbing within that step through colors would be the way. But I found out it's not the case. So know you can tab through steps and within those steps you can navigate through values with the arrow keys. And those values / colors / controls are highlighted on focus as well.
+
+![highlighting and live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/Usable-pleasurable.gif)
+
+And last but not least, part of the usable layer but to me also to the pleasurable layer is the live preview of the shirt.
+It's useable because it enables the user to see a result right away instead of having to go to a next page. It's mainly useable, yet I don't know, I think personally it's also pleasurable. Seeing your almost direct manipulation on the shirt, brings the shirt more alive. Like it's not a static image, but an actual shirt. And that's pleasurable to me.
+
+![live preview](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/live-preview.gif)
 
 ### Pleasurable 
 #### Definition in this context
@@ -135,9 +154,22 @@ The pleasurable layer consists of adding a little bit of user delight. Making th
 #### My proces
 I got a little stuck here sometimes with other layers. Because adding stuff like animations and enhancing the multistep form bring along challenges.
 
-Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after testing it on https://www.checkmycolours.com/ I found out it doesn't have enough contrast with the white background. Which in my vision, wasn't the case. But I can see everything. I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
+Anyway, it all looked a bit boring. I wanted to the website a little more color, I didn't entirely succeed. I used a blue color as a primary active button for instance. But after running a lighthous audit, I found out it doesn't have enough contrast with the white background. As I later described as well, but again here: 
+
+
+The Lighthouse audit with a fancy blue button: 
+![audit contrast](images/usable%20layer/not-suff-contrast-btn.png)
+![button with blue](images/usable%20layer/save-button-before.png)
+The Lighthouse audit with a high black-white contrast:
+
+![passed audit contrast](images/usable%20layer/Now-passes-audit.png)
+
+
+Which in my vision, wasn't the case. But I can see everything, I can't assume others do too. So I worked more with a grayscale. So I used near black buttons with a white text, and disabled buttons had a black text and a grey background. 
 
 When the button states change from disabled to enabled they change with a smooth little transition. It's a split of a second, but it's not so harsh for the eye. It's a little smoother. Also in the first step you can see how I added a little animation on the primary next step button. The animation makes the button bounce a little. The idea is that it moves the button out of place to get the attention of the user to commit that primary action. Sort of a call to action. That second animation doesn't work great anymore for the second step due to some form implications. But the idea was to apply that too over there. I could've differentiated the primary action more from the secondary elements. By color or by size.
+
+![animation](https://github.com/TomasS666/browser-technologies-1920/blob/master/images/pleasurable-btn.gif)
 
 Next time I would've done more with the multistep form. But then I need to form to be more reliable for those improvements. Because now it feels a bit hacky, but it works for the biggest part and that was the primary goal first. But as delight and to make it more dynamic, I see the next part of the form flying in and the other fading out, feedback of the steps being more alive, stuff like that. 
 
